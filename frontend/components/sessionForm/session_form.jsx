@@ -38,7 +38,7 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          Welcome to BenchBnB!
+          welcome to homeflicks!
           <br/>
           Please {this.props.formType} or {this.props.navLink}
           {this.renderErrors()}
