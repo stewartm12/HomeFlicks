@@ -6,7 +6,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      password: ''
+      password: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,6 +16,7 @@ class SessionForm extends React.Component {
       [field]: e.currentTarget.value
     });
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -43,6 +44,7 @@ class SessionForm extends React.Component {
     
     let sessionLink = (this.props.formType === 'login') ? <Link to="/signup">Sign up now</Link> : <Link to="/login">Log in now</Link>;
 
+
     return (
       <div className="session-body">
         <img src={window.backImage} className="session-homebackground"/>
@@ -53,17 +55,15 @@ class SessionForm extends React.Component {
           <p>{this.props.formType}</p>
           {errors}
           <div className="session-inputs">
-              <input type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                placeholder="email"
-              />
+              <label htmlFor="email">
+              <input id="email" type="text" value={this.state.email} onChange={this.update('email')} className="email-input"  />
+              <span className="session-float">email</span>
+              </label>
             <br/>
-              <input type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                placeholder="password"
-              />
+              <label htmlFor="password">
+              <input id="password" type="password" value={this.state.password} onChange={this.update('password')} className="password-input" />
+              <span className="session-float">password</span>
+              </label>
             <br/>
             <input type="submit" value={this.props.formType} />
           </div>
