@@ -11,7 +11,7 @@ const RightNav = ({ currentUser, logout }) => {
       <div className="dropdown">
         <img src={window.profileLogo} alt="profile logo" className="profile-logo"/>
         <button onClick={logout}>logout</button>
-        < div className="triangle-dd">
+        < div className="triangle-dd" >
         </div>
       </div>
     </div>
