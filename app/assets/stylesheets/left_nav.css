@@ -1,0 +1,27 @@
+.nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.browse-logo {
+  max-height: 70px;
+  max-width: 200px;
+  margin-left: 25px;
+  margin-right: 15px;
+}
+
+.nav-link > a {
+  margin-top: 10px;
+  font-size: 14px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #e5e5e5;
+  cursor: pointer;
+}
+
+html {
+  height: 100%;
+  background-color:#141414;
+
+}
