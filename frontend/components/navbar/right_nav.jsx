@@ -10,6 +10,9 @@ const RightNav = ({ currentUser, logout }) => {
           <input type="search" placeholder="Titles, genres"/>
         </form>
       </div>
+
+
+      
       <nav>
       <ul>
         <li>
