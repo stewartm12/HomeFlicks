@@ -10,6 +10,4 @@ config/master.key
 !/log/.keep
 !/tmp/.keep
 
-/app/assets/javascripts/bundle.js
-app/assets/images/
-public/assets
+
