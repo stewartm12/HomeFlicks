@@ -1,6 +1,7 @@
 import React from 'react';
 import RightNavContainer from './right_nav_container';
 import LeftNav from './left_nav';
+import VideoIndexContainer from './video_index_container';
 
 class MainNav extends React.Component {
   constructor(props) {
@@ -9,6 +10,7 @@ class MainNav extends React.Component {
 
   render() {
     return(
+      <>
       <header className="nav-link">
         <section>
           <LeftNav />
@@ -17,6 +19,8 @@ class MainNav extends React.Component {
           <RightNavContainer/>
         </section>
       </header>
+      <VideoIndexContainer/>
+      </>
     )
   }
 }

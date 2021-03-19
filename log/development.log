@@ -6539,3 +6539,1141 @@ Processing by Api::SessionsController#create as JSON
 Completed 200 OK in 781ms (Views: 322.9ms | ActiveRecord: 12.6ms)
 
 
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+[36m  S3 Storage (17717.1ms) [0m[32mUploaded file to key: LxwBihjSFpx6uAJgXTS7Jyxr (checksum: jlWi/QKfB/wkMZBWIFNLNg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "LxwBihjSFpx6uAJgXTS7Jyxr"], ["filename", "practice_video.mp4"], ["content_type", "video/mp4"], ["metadata", "{\"identified\":true}"], ["byte_size", 23918583], ["checksum", "jlWi/QKfB/wkMZBWIFNLNg=="], ["created_at", "2021-03-18 20:31:30.521521"]]
+  [1m[35m (6.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "movie"], ["record_type", "Movie"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-03-18 20:31:30.682392"]]
+  [1m[36mMovie Update (0.6ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = $1 WHERE "movies"."id" = $2[0m  [["updated_at", "2021-03-18 20:31:30.685989"], ["id", 1]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6e946f56-730a-46c1-a8b5-6fe8609d29cb) to Async(default) with arguments: #<GlobalID:0x0000556a6af2f308 @uri=#<URI::GID gid://home-flicks/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb] Performing ActiveStorage::AnalyzeJob (Job ID: 6e946f56-730a-46c1-a8b5-6fe8609d29cb) from Async(default) with arguments: #<GlobalID:0x0000556a6909d228 @uri=#<URI::GID gid://home-flicks/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb] [36m  S3 Storage (1331.5ms) [0m[34mDownloaded file from key: LxwBihjSFpx6uAJgXTS7Jyxr[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb] Skipping video analysis because ffmpeg isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb]   [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6e946f56-730a-46c1-a8b5-6fe8609d29cb] Performed ActiveStorage::AnalyzeJob (Job ID: 6e946f56-730a-46c1-a8b5-6fe8609d29cb) from Async(default) in 1508.19ms
+Started GET "/" for ::1 at 2021-03-18 17:34:39 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (204.9ms)
+Completed 200 OK in 69200ms (Views: 69095.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:37:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (169.0ms)
+Completed 200 OK in 1642ms (Views: 1507.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:41:58 -0400
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (338.1ms)
+Started GET "/" for ::1 at 2021-03-18 17:42:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (213.2ms)
+Completed 200 OK in 75292ms (Views: 75159.4ms | ActiveRecord: 7.6ms)
+
+
+Completed 200 OK in 59837ms (Views: 59691.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:44:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (191.0ms)
+Completed 200 OK in 1508ms (Views: 1381.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:47:44 -0400
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (445.5ms)
+Completed 200 OK in 124544ms (Views: 124372.9ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:51:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (319.0ms)
+Completed 200 OK in 2326ms (Views: 2148.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:54:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (176.0ms)
+Completed 200 OK in 1858ms (Views: 1635.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 17:56:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (198.5ms)
+Completed 200 OK in 4608ms (Views: 4474.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 18:00:39 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (226.3ms)
+Completed 200 OK in 4678ms (Views: 4472.1ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-03-18 18:00:49 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "uwj3IIlxPm9sZxns1ixnsA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (2.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email2"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "PHADsEIa2mlHhi6CBbLK_g"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "PHADsEIa2mlHhi6CBbLK_g"], ["updated_at", "2021-03-18 22:00:49.988702"], ["id", 2]]
+  ↳ app/models/user.rb:39
+  [1m[35m (9.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (51.0ms)
+Completed 200 OK in 959ms (Views: 891.5ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 18:03:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 60183ms (Views: 60038.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-03-18 18:04:52 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"email2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email2"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.9ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["updated_at", "2021-03-18 22:04:53.289664"], ["id", 2]]
+  ↳ app/models/user.rb:39
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (2.6ms)
+  Rendered api/users/show.json.jbuilder (142.5ms)
+Completed 200 OK in 1416ms (Views: 925.4ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 18:29:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (349.1ms)
+Completed 200 OK in 6365ms (Views: 6040.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 18:33:03 -0400
+Processing by Api::MoviesController#index as JSON
+Completed 404 Not Found in 320ms (ActiveRecord: 18.2ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Movie without an ID:
+  app/controllers/api/movies_controller.rb:3:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 18:42:27 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (354.3ms)
+Completed 200 OK in 3202ms (Views: 2900.3ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 18:44:50 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (842.1ms)
+Started GET "/" for ::1 at 2021-03-18 18:46:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (373.5ms)
+Completed 200 OK in 124313ms (Views: 124179.1ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 18:47:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (236.8ms)
+Completed 200 OK in 1849ms (Views: 1719.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/api/session" for ::1 at 2021-03-18 18:48:02 -0400
+Completed 200 OK in 139489ms (Views: 139350.1ms | ActiveRecord: 3.9ms)
+
+
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "TQXwu-6prlvs9dsf4ruR8w"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email2"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "-kHcWxgCUN4BrnXq4_0wjg"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (2.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "-kHcWxgCUN4BrnXq4_0wjg"], ["updated_at", "2021-03-18 22:48:20.495695"], ["id", 2]]
+  ↳ app/models/user.rb:39
+  [1m[35m (8.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered api/users/show.json.jbuilder (129.0ms)
+Completed 200 OK in 1228ms (Views: 1169.4ms | ActiveRecord: 16.7ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 18:56:36 -0400
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 178405ms (Views: 178191.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for ::1 at 2021-03-18 18:59:54 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"email2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email2"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (1.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["updated_at", "2021-03-18 22:59:56.037665"], ["id", 2]]
+  ↳ app/models/user.rb:39
+  [1m[35m (7.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered api/users/show.json.jbuilder (146.3ms)
+Completed 200 OK in 2690ms (Views: 1125.7ms | ActiveRecord: 31.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 18:59:57 -0400
+Processing by Api::MoviesController#index as JSON
+Completed 404 Not Found in 219ms (ActiveRecord: 9.1ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Movie without an ID:
+  app/controllers/api/movies_controller.rb:3:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:00:42 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (373.8ms)
+Completed 200 OK in 2950ms (Views: 2824.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:02:00 -0400
+Processing by Api::MoviesController#index as JSON
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Movie without an ID:
+  app/controllers/api/movies_controller.rb:3:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:02:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (385.8ms)
+Completed 200 OK in 3364ms (Views: 3222.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:02:51 -0400
+Processing by Api::MoviesController#index as JSON
+Completed 404 Not Found in 2ms (ActiveRecord: 0.0ms)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find Movie without an ID:
+  app/controllers/api/movies_controller.rb:3:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:05:01 -0400
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (2.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (758.8ms)
+Started GET "/" for ::1 at 2021-03-18 19:06:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (398.5ms)
+Completed 200 OK in 145837ms (Views: 145654.5ms | ActiveRecord: 22.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:07:59 -0400
+Completed 200 OK in 144148ms (Views: 143964.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 19:08:58 -0400
+Processing by Api::MoviesController#index as JSON
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (344.4ms)
+Completed 200 OK in 2984ms (Views: 2722.1ms | ActiveRecord: 2.2ms)
+
+
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (0.9ms)
+Completed 500 Internal Server Error in 3599ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+...ew(self); json.extract! @clip :id, :title, :url_for(@clip.mo...
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...son.extract! @clip :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:20:31 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (3.2ms)
+Completed 500 Internal Server Error in 1006ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+...ew(self); json.extract! @clip :id, :title, :url_for(@clip.mo...
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...son.extract! @clip :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:23:05 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (362.2ms)
+Completed 200 OK in 3198ms (Views: 2889.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:23:08 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (1.5ms)
+Completed 500 Internal Server Error in 463ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+...ew(self); json.extract! @clip :id, :title, :url_for(@clip.mo...
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...son.extract! @clip :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:23:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (472.2ms)
+Completed 200 OK in 3152ms (Views: 2998.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:23:52 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (1.2ms)
+Completed 500 Internal Server Error in 453ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected ':', expecting keyword_end
+...ew(self); json.extract! @clip :id, :title, :url_for(@clip.mo...
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ',', expecting &. or :: or '[' or '.'
+...son.extract! @clip :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:24:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (484.2ms)
+Completed 200 OK in 3521ms (Views: 3268.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:24:14 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (1.1ms)
+Completed 500 Internal Server Error in 452ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected '(', expecting keyword_end
+...! @clip, :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:25:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (2.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (417.1ms)
+Completed 200 OK in 3234ms (Views: 3072.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:25:04 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (2.4ms)
+Completed 500 Internal Server Error in 465ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected '(', expecting keyword_end
+...! @clip, :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:25:12 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (2.2ms)
+Completed 500 Internal Server Error in 678ms (ActiveRecord: 0.0ms)
+
+
+
+SyntaxError - syntax error, unexpected '(', expecting keyword_end
+...! @clip, :id, :title, :url_for(@clip.movie)
+...                              ^
+/mnt/c/Users/stewa/fullStackProject/HomeFlicks/app/views/api/movies/index.json.jbuilder:1: syntax error, unexpected ')', expecting keyword_end
+..., :title, :url_for(@clip.movie)
+...                              ^:
+  app/views/api/movies/index.json.jbuilder:1:in `'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:33:34 -0400
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (450.5ms)
+Started DELETE "/api/session" for ::1 at 2021-03-18 19:34:42 -0400
+Completed 200 OK in 89658ms (Views: 89282.2ms | ActiveRecord: 9.5ms)
+
+
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "iuv2OXL9tpspGwf7iL1LFQ"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email2"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "aM2lyUtRVoKQw8KqikCPMQ"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "aM2lyUtRVoKQw8KqikCPMQ"], ["updated_at", "2021-03-18 23:35:04.508053"], ["id", 2]]
+  ↳ app/models/user.rb:39
+  [1m[35m (10.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (46.7ms)
+Completed 200 OK in 318ms (Views: 294.2ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/api/session" for ::1 at 2021-03-18 19:35:13 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"email2", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email2"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email2"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."session_token" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["id", 2], ["LIMIT", 1]]
+  ↳ app/models/user.rb:39
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["updated_at", "2021-03-18 23:35:13.401400"], ["id", 2]]
+  ↳ app/models/user.rb:39
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:39
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (31.4ms)
+Completed 200 OK in 671ms (Views: 283.4ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:35:13 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:3
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (142.2ms)
+Completed 500 Internal Server Error in 622ms (ActiveRecord: 6.3ms)
+
+
+
+NoMethodError - undefined method `map' for #<Movie:0x00007fc6560e2918>
+Did you mean?  tap:
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder__3844223161555699583_70244911958700'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:37:56 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (136.2ms)
+Completed 200 OK in 1211ms (Views: 1099.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:38:07 -0400
+Processing by Api::MoviesController#index as JSON
+  [1m[36mMovie Load (1.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/api/movies_controller.rb:3
+  Rendering api/movies/index.json.jbuilder
+  Rendered api/movies/index.json.jbuilder (122.3ms)
+Completed 500 Internal Server Error in 542ms (ActiveRecord: 1.1ms)
+
+
+
+NoMethodError - undefined method `map' for #<Movie:0x00007fc654d92b10>
+Did you mean?  tap:
+  app/views/api/movies/index.json.jbuilder:1:in `_app_views_api_movies_index_json_jbuilder__3844223161555699583_70244901880600'
+  app/controllers/api/movies_controller.rb:4:in `index'
+
+Started GET "/" for ::1 at 2021-03-18 19:41:52 -0400
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (299.7ms)
+Completed 200 OK in 63510ms (Views: 63406.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:43:37 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (366.6ms)
+Completed 200 OK in 868ms (Views: 746.8ms | ActiveRecord: 12.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 19:45:11 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (147.8ms)
+Completed 200 OK in 1180ms (Views: 1061.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 19:45:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (1.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (126.9ms)
+Completed 200 OK in 1221ms (Views: 1079.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:45:17 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (15.2ms)
+Completed 200 OK in 598ms (Views: 595.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:45:34 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (9.0ms)
+Completed 200 OK in 474ms (Views: 472.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 19:56:54 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (123.3ms)
+Completed 200 OK in 7471ms (Views: 7350.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 19:57:09 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (7.7ms)
+Completed 200 OK in 454ms (Views: 452.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:24:15 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (92.7ms)
+Completed 200 OK in 2127ms (Views: 2058.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:27:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 1541ms (Views: 1481.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:27:13 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (75.8ms)
+Completed 200 OK in 683ms (Views: 606.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:28:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (110.9ms)
+Completed 200 OK in 1054ms (Views: 957.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:30:47 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (93.9ms)
+Completed 200 OK in 1457ms (Views: 1384.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:34:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (111.2ms)
+Completed 200 OK in 1618ms (Views: 1551.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:34:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 781ms (Views: 715.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:34:34 -0400
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (195.4ms)
+Completed 200 OK in 45159ms (Views: 45084.5ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:47:18 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (103.9ms)
+Completed 200 OK in 1567ms (Views: 1495.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:49:45 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (126.7ms)
+Completed 200 OK in 2008ms (Views: 1934.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:51:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (116.1ms)
+Completed 200 OK in 1479ms (Views: 1394.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 20:52:23 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (363.6ms)
+Completed 200 OK in 648ms (Views: 573.0ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 20:57:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (90.1ms)
+Completed 200 OK in 1637ms (Views: 1523.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:05:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (82.9ms)
+Completed 200 OK in 1489ms (Views: 1425.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:05:32 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (1.0ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (10.6ms)
+Completed 200 OK in 296ms (Views: 293.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:05:43 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 878ms (Views: 815.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:05:51 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (7.1ms)
+Completed 200 OK in 300ms (Views: 298.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:08:59 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 1496ms (Views: 1417.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:12:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (97.7ms)
+Completed 200 OK in 1470ms (Views: 1405.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:16:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (74.5ms)
+Completed 200 OK in 13083ms (Views: 13013.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:20:24 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (139.5ms)
+Completed 200 OK in 1627ms (Views: 1556.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:24:17 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (96.2ms)
+Completed 200 OK in 1506ms (Views: 1433.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:24:19 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (11.5ms)
+Completed 200 OK in 270ms (Views: 265.9ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:25:18 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.7ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (8.6ms)
+Completed 200 OK in 284ms (Views: 282.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158/practice_video.mp4" for ::1 at 2021-03-18 21:25:34 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158", "filename"=>"practice_video"}
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (37.1ms) [0m[34mGenerated URL for file at key: LxwBihjSFpx6uAJgXTS7Jyxr (https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T012534Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e214a8900048ed4f9206ed183b9289d8bf3ae7f1d65c5de27fe2c375eb41fae4)[0m
+Redirected to https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T012534Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=e214a8900048ed4f9206ed183b9289d8bf3ae7f1d65c5de27fe2c375eb41fae4
+Completed 302 Found in 61ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:30:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.9ms)
+  Rendered static_pages/root.html.erb within layouts/application (149.3ms)
+Completed 200 OK in 1889ms (Views: 1768.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:30:23 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (7.5ms)
+Completed 200 OK in 286ms (Views: 284.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:30:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (175.0ms)
+Completed 200 OK in 1952ms (Views: 1868.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:31:00 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (20.7ms)
+Completed 200 OK in 775ms (Views: 772.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158/practice_video.mp4" for ::1 at 2021-03-18 21:31:01 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158", "filename"=>"practice_video"}
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: LxwBihjSFpx6uAJgXTS7Jyxr (https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T013101Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c985e457951f4e0808a3567713261fd4da7d5e32ad52bffb17b9f6e66259f6c9)[0m
+Redirected to https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T013101Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c985e457951f4e0808a3567713261fd4da7d5e32ad52bffb17b9f6e66259f6c9
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:31:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (145.0ms)
+Completed 200 OK in 1780ms (Views: 1680.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:31:27 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (10.4ms)
+Completed 200 OK in 440ms (Views: 437.3ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158/practice_video.mp4" for ::1 at 2021-03-18 21:31:28 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158", "filename"=>"practice_video"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.7ms) [0m[34mGenerated URL for file at key: LxwBihjSFpx6uAJgXTS7Jyxr (https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T013128Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f1df6a9c2de44bb59fc059365683d5b6f0dfdf1d20794c9300b6fd8bc878bc39)[0m
+Redirected to https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T013128Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=f1df6a9c2de44bb59fc059365683d5b6f0dfdf1d20794c9300b6fd8bc878bc39
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 21:32:16 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.8ms)
+  Rendered static_pages/root.html.erb within layouts/application (142.3ms)
+Completed 200 OK in 2307ms (Views: 2195.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 21:32:19 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (13.9ms)
+Completed 200 OK in 466ms (Views: 463.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2021-03-18 22:41:16 -0400
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "14Md797P11mczuUuktbLcg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:7
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (204.6ms)
+Completed 200 OK in 52418ms (Views: 52323.8ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/movies" for ::1 at 2021-03-18 22:42:17 -0400
+Processing by Api::MoviesController#index as JSON
+  Rendering api/movies/index.json.jbuilder
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/api/movies/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Movie"], ["name", "movie"], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/movies/index.json.jbuilder:3
+  Rendered api/movies/index.json.jbuilder (272.8ms)
+Completed 200 OK in 588ms (Views: 488.6ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158/practice_video.mp4" for ::1 at 2021-03-18 22:42:18 -0400
+Processing by ActiveStorage::BlobsController#show as MP4
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--292b4d9949d14dd790f1aaa0c4722d71ec48b158", "filename"=>"practice_video"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/stewartm12/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (33.6ms) [0m[34mGenerated URL for file at key: LxwBihjSFpx6uAJgXTS7Jyxr (https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T024218Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c57050e51255fbb1a6cf151ae4e1668625c41aeae09992672aadd74b7d9eeaa6)[0m
+Redirected to https://homeflicks-dev.s3.amazonaws.com/LxwBihjSFpx6uAJgXTS7Jyxr?response-content-disposition=attachment%3B%20filename%3D%22practice_video.mp4%22%3B%20filename%2A%3DUTF-8%27%27practice_video.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA25FBBIQWMSAMZLPA%2F20210319%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210319T024218Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=c57050e51255fbb1a6cf151ae4e1668625c41aeae09992672aadd74b7d9eeaa6
+Completed 302 Found in 53ms (ActiveRecord: 0.6ms)
+
+
