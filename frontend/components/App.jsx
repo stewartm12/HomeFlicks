@@ -1,16 +1,11 @@
 import React from "react";
 import MainNav from "./navbar/main_nav";
-import {
-  Route,
-  Redirect,
-  Switch,
-  Link,
-  HashRouter
-} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
 import LoginFormContainer from './sessionForm/login_form_container';
 import SignupFormContainer from './sessionForm/signup_form_container';
 import HomeContainer from './sessionForm/home';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import './fontawesome';
 
 
 const App = () => (

@@ -6,3 +6,11 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+# Genre
+let Romance = Genre.create!(name: 'Romance')
+let Adventure = Genre.create!(name: 'Adventure')
+let Comedy = Genre.create!(name: 'Comedy')
+let Anime = Genre.create!(name: 'Anime')
+
+# 

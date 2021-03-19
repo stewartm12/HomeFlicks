@@ -10,4 +10,7 @@
 #
 class UserMovie < ApplicationRecord
   validates :movie_id, :user_id, presence: true
+
+  belongs_to :movie
+  belongs_to :user
 end
