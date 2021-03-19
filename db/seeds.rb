@@ -8,9 +8,10 @@
 
 
 # Genre
-let Romance = Genre.create!(name: 'Romance')
-let Adventure = Genre.create!(name: 'Adventure')
-let Comedy = Genre.create!(name: 'Comedy')
-let Anime = Genre.create!(name: 'Anime')
+# Romance = Genre.create!(name: 'Romance')
+# Adventure = Genre.create!(name: 'Adventure')
+# Comedy = Genre.create!(name: 'Comedy')
+# Anime = Genre.create!(name: 'Anime')
 
-# 
+User.destroy_all
+user1 = User.create!(email: 'email2', password: 'password2')
