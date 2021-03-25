@@ -102,9 +102,7 @@
   border: none;
   outline: none;
   font-size: 19px;
-  margin-top: 419px;
-    margin-left: 482px;
+    margin-left: 50px;
     z-index: 333;
-    position: absolute;
     cursor: pointer;
 }
