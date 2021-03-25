@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 class Home extends React.Component {
   constructor(props) {
@@ -54,9 +55,13 @@ class Home extends React.Component {
               </div>
         </section>
       </div>
+      <section className="home-links">
+        <a href="https://github.com/stewartm12" target="_blank"><FontAwesomeIcon icon={['fab', 'github']} /> </a>
+        <a href="https://www.linkedin.com/in/stewart-m-44508a136/" target="_blank"><FontAwesomeIcon icon={['fab', 'linkedin']} /> </a>
+      </section>
     </div>
-  )
-}
+    )
+  }
 }
 
 
