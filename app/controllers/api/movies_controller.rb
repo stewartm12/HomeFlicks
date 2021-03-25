@@ -1,6 +1,6 @@
 class Api::MoviesController < ApplicationController
-  def index
-    @clips = Movie.all
-    render "api/movies/index"
+  def show
+    @movie = Movie.find(params[:id])
+    render "api/movies/show"
   end
 end

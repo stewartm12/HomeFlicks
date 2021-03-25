@@ -1,6 +1,6 @@
 class Api::GenresController < ApplicationController
-  def show
-    @genre = Genre.find(params[:id])
-    render :show
+  def index 
+    @genres = Genre.all
+    render "api/genres/index"
   end
 end

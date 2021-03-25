@@ -1,13 +1,14 @@
-import * as APIUtil from '../util/movies_api_util';
-export const FETCH_MOVIE = "FETCH_MOVIE";
+import {getMovie} from '../util/movies_api_util';
+export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
 
-const fetchOneMovie = movie => {
+const receiveMovie = movie => {
   return {
-    type: FETCH_MOVIE,
+    type: RECEIVE_MOVIE,
     movie
   }
 }
 
-export const fetchMovie = () => dispatch => {
-  return APIUtil.fetchMovie().then(movie => (dispatch(fetchOneMovie(movie))), err => (console.log(err)));
+export const fetchMovie = movieId => dispatch => {
+  return getMovie(movieId).then(movie => {
+    return dispatch(receiveMovie(movie))}, err => {err.JSON});
 }

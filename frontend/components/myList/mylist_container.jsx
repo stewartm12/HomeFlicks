@@ -1,0 +1,24 @@
+import React from 'react';
+// import MyList from './mylist';
+import {connect} from 'react-redux';
+import {saveMovie, deleteMovie} from '../../actions/mylist_actions';
+import MyList from './mylist';
+import VideoIndex from '../navbar/video_index';
+import {withRouter} from 'react-router-dom'
+
+const mSTP = state => {
+  const userId = state.session.id;
+  return {
+    movies: Object.values(state.entities.users[userId].myList)
+  }
+}
+
+
+const mDTP = dispatch => {
+  return {
+    saveMovie: (userId, movieId) => dispatch(saveMovie(userId, movieId)),
+    deleteMovie: (userId, movieId) => dispatch(deleteMovie(userId, movieId))
+  }
+}
+
+export default withRouter(connect(mSTP, mDTP)(MyList));

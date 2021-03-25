@@ -1,0 +1,48 @@
+.banner-video-wrapper {
+  /* width: 900px;
+  margin: auto; */
+  background: black
+}
+
+.banner-video-wrapper > video {
+  /* margin-left: 430px; */
+  width: 100%;
+  height: 700px;
+}
+
+
+.banner-title > h2{
+  color: white;
+  margin-bottom: 20px;
+  font-size: 80px;
+  width: 560px;
+}
+
+.banner-description {
+  display: flex;
+  justify-content: space-between;
+}
+
+.banner-description > p:first-child {
+  color: white;
+  width: 400px;
+}
+
+
+.banner-desc-container  {
+    margin-top: -500px;
+    z-index: 6;
+    position: absolute;
+    margin-left: 20px;
+    width: 100%;
+}
+
+.banner-rating {
+  border: solid 3px #dcdcdc;
+  border-style: none none none solid;
+  background-color: rgba(51,51,51,.6);
+  font-size: 1.1vw;
+  padding: .5vw 3.5vw .5vw .8vw;
+  color: white;
+  height: 20px;
+}

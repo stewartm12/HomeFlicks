@@ -14,9 +14,9 @@ class LeftNav extends React.Component {
       <div className="nav-link">
         <Link to="/browse"><img src={window.logo} alt="homeflicks logo" className="browse-logo"/></Link>
         <Link to="/browse">Home</Link>
-        <Link to="/tvshows">TV Shows</Link>
-        <Link to="movies">Movies</Link>
-        <Link to="my-list">My List</Link>
+        <Link to="/browse/tvshows">TV Shows</Link>
+        <Link to="/browse/movies">Movies</Link>
+        <Link to="/browse/my-list">My List</Link>
       </div>
     )
   }

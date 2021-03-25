@@ -146,3 +146,11 @@ nav>ul>li>ul:after {
 nav>ul>li:hover>ul {
   display: block;
 }
+
+button {
+	background: white;
+	width: 26px;
+	height: 26px;
+	border-radius: 13px;
+	outline: none;
+}

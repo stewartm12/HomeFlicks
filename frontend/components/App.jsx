@@ -5,6 +5,7 @@ import LoginFormContainer from './sessionForm/login_form_container';
 import SignupFormContainer from './sessionForm/signup_form_container';
 import HomeContainer from './sessionForm/home';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import MyListContainer from './myList/mylist_container'
 import './fontawesome';
 
 
@@ -14,7 +15,9 @@ const App = () => (
       <AuthRoute exact path="/" component={HomeContainer} />
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <ProtectedRoute exact path="/browse" component={MainNav} />
+      <ProtectedRoute  path="/browse" component={MainNav} />
+      {/* <Route path="/" component={}></Route> */}
+      {/* <Pr otectedRoute exact path="/my-list" component={MyListContainer}/> */}
     </Switch>
 
   </div>

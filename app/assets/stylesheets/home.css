@@ -6,11 +6,10 @@
   position: fixed;
 }
 
-.home-body {
+ .home-body {
   font-family: Helvetica, Arial, sans-serif;
-  overflow:auto;
+  /* overflow:auto; */
 }
-
 .home-text {
   position: absolute;
   display: flex;
@@ -36,17 +35,40 @@
   right: 0;
 }
 
-.home-header > img {
-  margin-left: 15px;
+.home-logo {
+  margin-left: 270px;
+  margin-top: -40px;
+  width: 150px;
 }
 
+.home-login {
+  margin-top: -60px;
+  margin-right: 300px;
+  text-decoration: none;
+  color: white;
+  background-color: rgb(229, 9, 20);
+  border-radius: 5px;
+  padding: 7px 17px;
+  font-size: 16px;
+  font-weight: 400px;
+}
+
+.home-text > h2 {
+  font-size: 50px;
+  margin-top: -90px;
+}
+/*
+.home-header > img {
+  margin-left: 15px;
+} */
+/* 
 .home-header > section > p {
   color: white;
   display: flex;
   font-size: 20px;
-}
+} */
 
-.home-header > section > a {
+/* .home-header > section > a {
   color: white;
   background-color: rgb(187, 8, 8);
   border-radius: 5px;
@@ -54,32 +76,78 @@
   text-decoration: none;
   margin-left: 15px;
   margin-right: 30px;
-}
+} */
 
-.home-header > section {
+/* .home-header > section {
   display: flex;
 }
 
-.home-text > h2 {
-  font-size: 4em;
-font-weight: 500px;
-}
+} */
 
 .home-text > p {
-  font-size: 1.625rem;
-  font-weight: 400;
-  margin: 20px;
+  font-size: 1.3rem;
+    margin: 1rem auto;
 }
-
-.home-text > a {
+/* .home-text > a {
   color: white;
   background-color: rgb(187, 8, 8);
   border-radius: 10px;
   padding: 10px 30px;
   font-size: 30px;
   text-decoration: none;
+} */
+
+.home-email-input {
+  min-width: 500px;
+  height: 50px;
 }
 
-.home-text > a:hover {
-  background-color: red;
+.home-email-submit {
+  padding: 0 30px;
+  height: 60px;
+  color: white;
+  background-color: #f40612;
+  width: 185px;
+  border: none;
+  outline: none;
+  margin-top: 1px;
+}
+
+.home-email-input {
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  width: 90%;
+  line-height: 55px;
+  font-size: 17px;
+  text-indent: 15px;
+  height: 55px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.home-email-input:focus {
+  outline: none !important;
+}
+
+.home-email-input:focus ~ .email-label,
+.home-email-input:valid ~ .email-label {
+  /* top: 80px; */
+  /* bottom: 10px; */
+  margin-top: 5px;
+  left: 160px;
+  font-size: 12px;
+  opacity: 1;
+}
+
+.email-label {
+  position: absolute;
+  pointer-events: none;
+  margin-top: 22px;
+  left: 170px;
+  transition: 0.2s ease all;
+  color: gray;
+}
+
+.home-form {
+  display: flex;
 }

@@ -10,7 +10,13 @@
 #
 class UserMovie < ApplicationRecord
   validates :movie_id, :user_id, presence: true
+  validates_uniqueness_of :movie_id, :scope => :user_id
 
-  belongs_to :movie
-  belongs_to :user
+  belongs_to :movie,
+  foreign_key: :movie_id,
+  class_name: :Movie
+
+  belongs_to :user,
+  foreign_key: :user_id,
+  class_name: :User
 end

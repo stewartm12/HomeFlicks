@@ -1,6 +1,6 @@
-export const fetchMovie = () => {
+export const getMovie = movieId => {
   return $.ajax({
     method: 'GET',
-    url: '/api/movies'
+    url: `/api/movies/${movieId}`
   })
 }

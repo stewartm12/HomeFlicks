@@ -1,18 +1,27 @@
 import React from 'react';
 import VideoIndex from './video_index';
-import {fetchMovie} from '../../actions/movie_actions';
+import {fetchGenres} from '../../actions/genre_actions';
 import {connect} from 'react-redux';
+import {fetchMovie} from '../../actions/movie_actions'
+import {deleteMovie, saveMovie} from '../../actions/mylist_actions'
 
 const mstp = state => {
   debugger
   return {
-    movie: state.entities.movies[0]
+    genres: Object.values(state.entities.genres),
+    userId: state.session.id,
+    myList: state.entities.users[state.session.id].myList,
+    myListName: 'My List'
+    // movies: Object.values(state.entities.genres.movies)
   }
 }
 
 const mdtp = dispatch => {
   return {
-    fetchMovie: () => dispatch(fetchMovie())
+    fetchGenres: () => dispatch(fetchGenres()),
+    saveMovie: (userId, movieId) => dispatch(saveMovie(userId, movieId)),
+    deleteMovie: (userId, movieId) => dispatch(deleteMovie(userId, movieId)),
+    fetchMovie: movieId => dispatch(fetchMovie(movieId))
   }
 }
 

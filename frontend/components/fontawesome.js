@@ -13,7 +13,10 @@ import {
     faVolumeMute,
     faFastForward,
     faBackward,
-    faVolumeUp
+    faVolumeUp,
+    faExpand,
+    faPlusCircle,
+    faCheckCircle
 
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,5 +31,8 @@ library.add(
     faVolumeMute,
     faFastForward,
     faBackward,
-    faVolumeUp
+    faVolumeUp,
+    faExpand,
+    faPlusCircle,
+    faCheckCircle
 );

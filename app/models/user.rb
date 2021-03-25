@@ -19,7 +19,14 @@ class User < ApplicationRecord
 
   before_validation :ensure_session_token
 
-  has_many :movies
+  has_many :movies,
+  foreign_key: :user_id,
+  class_name: :UserMovie
+
+  has_many :movie_names,
+  through: :movies,
+  source: :movie
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

@@ -1,11 +1,27 @@
 .nav-link {
   display: flex;
   align-items: center;
+  /* justify-content: space-between; */
+  /* position: absolute; */
+  /* z-index: 300px; */
+  width: 100%;
+}
+
+.nav-link-wrapper {
+  z-index: 500;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  position: fixed;
+    width: 100%;
+}
+
+.nav-link-wrapper .active {
+  background: linear-gradient(90deg, rgb(37, 37, 37) 0%, rgb(0, 0, 0) 100%)
 }
 
 .browse-logo {
-  max-height: 70px;
+  max-height: 100px;
   max-width: 200px;
   margin-left: 25px;
   margin-right: 15px;
@@ -13,15 +29,21 @@
 
 .nav-link > a {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 18px;
   margin-right: 10px;
   text-decoration: none;
   color: #e5e5e5;
   cursor: pointer;
 }
-
+/* 
 html {
   height: 100%;
   background-color:#141414;
+} */
 
+.main-container {
+  /* width: fit-content; */
+  height: 2450px;
+  background-color: #141414;
+  
 }

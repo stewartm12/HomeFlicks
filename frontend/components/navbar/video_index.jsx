@@ -1,22 +1,38 @@
 import React from 'react';
-import VideoIndexItem from './video_index_item'
+import GenreIndex from '../genres/genre_index';
+import BannerContainer from '../banner/banner_container'
 
 class VideoIndex extends React.Component {
   constructor(props) {
     super(props);
-    debugger
+    this.state = {
+      navBar: false,
+      setNavBar: false
+    }
   }
 
   componentDidMount() {
-    debugger
-    this.props.fetchMovie();
+    this.props.fetchGenres();
   }
 
   render () {
-    let video = this.props.movie ? <VideoIndexItem movie={this.props.movie}/> : "";
+    let genreList = this.props.genres.map((genre, index) => {
+      return(
+        <>
+          <GenreIndex key={`genre${index}`} userId={this.props.userId} genre={genre} movies={genre.movies} saveMovie={this.props.saveMovie} deleteMovie={this.props.deleteMovie} myList={this.props.myList} myListName={this.props.myListName}/> 
+        </>
+      )
+    })
+    let genres = this.props.genres ? genreList : "";
+
     return(
-      <div className="firstvideo">
-        {video}
+      <div>
+        <div className="banner-wrapper">
+          <BannerContainer/>
+        </div>
+        <div className="firstvideo">
+          {genres}
+        </div>
       </div>
     )
   }
