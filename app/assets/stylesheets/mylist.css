@@ -3,5 +3,8 @@
   height: vmax;
   position: absolute;
   margin-top: 300px;
-  display: flex;
+}
+
+.mylist-container {
+  font-size: 24px;
 }
