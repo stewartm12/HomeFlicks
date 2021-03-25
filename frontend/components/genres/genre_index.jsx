@@ -17,7 +17,7 @@ class GenreIndex extends React.Component{
         )
       })
       return (
-        <div className="genre-index">
+        <div className="genre-index ">
       <h2 className="genre-name"><strong>{this.props.genre.name}</strong></h2>
       <div className="row-wrapper">
       {movieList}
