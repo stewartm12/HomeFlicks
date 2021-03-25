@@ -14,18 +14,20 @@ class MainNav extends React.Component {
   render() {
     return(
       <div className="main-container">
-      <div className="nav-link-wrapper" ref={this.navBar}>
+        <div className="nav-link-wrapper" ref={this.navBar}>
+          <section>
+            <LeftNav />
+          </section>
+          <section>
+            <RightNavContainer/>
+          </section>
+        </div>
         <section>
-          <LeftNav />
-        </section>
-        <section>
-          <RightNavContainer/>
-        </section>
-      </div>
       <Switch>
         <Route exact path="/browse" component={VideoIndexContainer} />
         <Route exact path='/browse/my-list' component={MyListContainer}/>
       </Switch>
+      </section>
       </div>
     )
   }

@@ -20,7 +20,7 @@
   z-index: 2;
   color: white;
   left: 50%;
-  top: 50%;
+  top: 60%;
   transform: translate(-50%, -50%);
 }
 
@@ -36,14 +36,14 @@
 }
 
 .home-logo {
-  margin-left: 270px;
+  margin-left: 120px;
   margin-top: -40px;
   width: 150px;
 }
 
 .home-login {
   margin-top: -60px;
-  margin-right: 300px;
+  margin-right: 150px;
   text-decoration: none;
   color: white;
   background-color: rgb(229, 9, 20);
@@ -56,6 +56,7 @@
 .home-text > h2 {
   font-size: 50px;
   margin-top: -90px;
+  width: 600px;
 }
 /*
 .home-header > img {
@@ -84,7 +85,12 @@
 
 } */
 
-.home-text > p {
+.home-text > p:nth-child(2) {
+  font-size: 2rem;
+    margin: 1rem auto;
+}
+
+.home-text > p:nth-child(3) {
   font-size: 1.3rem;
     margin: 1rem auto;
 }
@@ -97,14 +103,14 @@
   text-decoration: none;
 } */
 
-.home-email-input {
+/* .home-email-input {
   min-width: 500px;
   height: 50px;
-}
+} */
 
 .home-email-submit {
   padding: 0 30px;
-  height: 60px;
+  height: 65px;
   color: white;
   background-color: #f40612;
   width: 185px;
@@ -114,13 +120,14 @@
 }
 
 .home-email-input {
+  min-width: 500px;
   font-family: Arial, Helvetica, sans-serif;
   resize: none;
   width: 90%;
   line-height: 55px;
   font-size: 17px;
   text-indent: 15px;
-  height: 55px;
+  height: 60px;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
@@ -134,7 +141,7 @@
   /* top: 80px; */
   /* bottom: 10px; */
   margin-top: 5px;
-  left: 160px;
+  left: 110px;
   font-size: 12px;
   opacity: 1;
 }
@@ -143,7 +150,7 @@
   position: absolute;
   pointer-events: none;
   margin-top: 22px;
-  left: 170px;
+  left: 120px;
   transition: 0.2s ease all;
   color: gray;
 }

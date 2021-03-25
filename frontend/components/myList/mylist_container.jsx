@@ -9,7 +9,9 @@ import {withRouter} from 'react-router-dom'
 const mSTP = state => {
   const userId = state.session.id;
   return {
-    movies: Object.values(state.entities.users[userId].myList)
+    movies: Object.values(state.entities.users[userId].myList),
+    userId: state.session.id,
+    myList: state.entities.users[state.session.id].myList,
   }
 }
 

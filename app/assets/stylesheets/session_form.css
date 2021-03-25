@@ -8,7 +8,6 @@
 
 .session-body {
   font-family: Helvetica, Arial, sans-serif;
-  /* overflow:auto; */
 }
 
 .session-form {
@@ -16,25 +15,25 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
   padding: 60px 68px 75px 68px;
   z-index: 2;
   color: white;
   left: 50%;
-  top: 40%;
+  top: 55%;
   transform: translate(-50%, -50%);
   font-size: 32px;
   font-weight: 700;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   margin-bottom: 10px;
-  height: 40%;
+  height: 55%;
+  width: 25%;
 }
 
-.session-form > p:first-child {
-  display: flex;
-  justify-content: flex-start;
-  margin-right: 140px;
+.session-form > h1 {
+  width: 300px;
+  font-size: 35px;
+  font-family: helvetica;
 }
 
 .bottom-form {
@@ -74,14 +73,15 @@
 
 
 .session-inputs > input:last-child {
-  font-size: 16px;
+  border: none;
+  font-size: 18px;
   border-radius: 4px;
   cursor: pointer;
   color: white;
   margin-bottom: 15px;
   width: 100%;
   background: rgb(229, 9, 20);
-  padding: 10px;
+  padding: 16px;
 }
 
 .session-inputs > label {
@@ -99,7 +99,10 @@
   color: white;
   border-radius: 4px;
   font-size: 16px;
-
+  border: none;
+  height: 40px;
+  width: 280px;
+  font-size: 20px;
 }
 
 .session-float {
@@ -107,16 +110,17 @@
   z-index: 10;
   color: #767676;
   left: 20px;
-  top: 19px;
-  font-size: 14px;
+  top: 25px;
+  font-size: 20px;
   cursor: text;
+  transition: 0.2s ease all;
+  color: gray;
 }
 
-.email-input:focus + .session-float {
-  transition-timing-function: ease-out;
-  transition: font 0.1s;
-  transition: top 0.2s;
-  font-size: 10px;
+.email-input:focus + .session-float,
+input:not([value=""]) + .session-float{
+  transform: scale(.90);
+  font-size: 15px;
   top: 11px;
 }
 
@@ -134,15 +138,16 @@
   color: white;
   border-radius: 4px;
   font-size: 16px;
-
+  border: none;
+  height: 40px;
+  width: 280px;
 }
 
 
-.password-input:focus-within + .password-float {
-  transition-timing-function: ease-out;
-  transition: font 0.1s;
-  transition: top 0.2s;
-  font-size: 10px;
+.password-input:focus-within + .password-float,
+input:not([value=""]) + .password-float {
+  transform: scale(.9);
+  font-size: 15px;
   top: -30px;
 }
 
@@ -153,15 +158,8 @@
   color: #767676;
   left: 20px;
   top: -15px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: text;
+  font-size: 20px;
+  transition: 0.2s ease all;
 }
-
-/* .after-clicked {
-  position: absolute;
-  z-index: 10;
-  color: #767676;
-  left: 20px;
-  top: 8px;
-  font-size: 10px;
-} */

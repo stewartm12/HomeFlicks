@@ -19,7 +19,7 @@ class VideoIndex extends React.Component {
     let genreList = this.props.genres.map((genre, index) => {
       return(
         <>
-          <GenreIndex key={`genre${index}`} userId={this.props.userId} genre={genre} movies={genre.movies} saveMovie={this.props.saveMovie} deleteMovie={this.props.deleteMovie} myList={this.props.myList} myListName={this.props.myListName}/> 
+          <GenreIndex key={`genre${index}`} userId={this.props.userId} genre={genre} movies={genre.movies} saveMovie={this.props.saveMovie} deleteMovie={this.props.deleteMovie}/> 
         </>
       )
     })

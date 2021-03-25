@@ -6,7 +6,6 @@ import {fetchMovie} from '../../actions/movie_actions'
 import {deleteMovie, saveMovie} from '../../actions/mylist_actions'
 
 const mstp = state => {
-  debugger
   return {
     genres: Object.values(state.entities.genres),
     userId: state.session.id,

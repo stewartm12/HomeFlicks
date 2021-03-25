@@ -35,15 +35,15 @@
   color: #e5e5e5;
   cursor: pointer;
 }
-/* 
+
 html {
   height: 100%;
-  background-color:#141414;
-} */
+  background: #141414;
+}
 
 .main-container {
   /* width: fit-content; */
-  height: 2450px;
+  height: vmax;
   background-color: #141414;
   
 }

@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
           <Link to='/'><img src={window.logo} className="session-logo"/></Link>
         </div>
         <form onSubmit={this.handleSubmit} className="session-form">
-          <p>Sign In</p>
+          <h1>Sign In</h1>
           {errors}
           <div className="session-inputs">
               <label htmlFor="email">
@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
               <span className="password-float">password</span>
               </label>
             <br/>
-            <input type="submit" value={this.props.formType} />
+            <input type="submit" value="Sign In" />
           </div>
           <div className="bottom-form">
           <p >New to HomeFlicks?</p>

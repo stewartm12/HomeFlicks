@@ -1,4 +1,7 @@
-.mylist-container > h2{
-  align-items: center;
+.mylist-container {
   color: white;
+  height: vmax;
+  position: absolute;
+  margin-top: 300px;
+  display: flex;
 }
