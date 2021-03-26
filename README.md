@@ -1,25 +1,18 @@
 # README
+[HomeFlicks Site](https://homeflicks.herokuapp.com/#/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# HomeFlicks
+HomeFlicks is a  subscription-based streaming service inspired by Netflix that allows members to watch TV shows and movies without commercials on an internet-connected device.   
+This web service was built in 10 days with more features, refactors, and bug fixes on its way.
 
-Things you may want to cover:
+# Overview
+* Secured frontend to backend user authentication using BCrypt.
 
-* Ruby version
+* On login, users are greeted with a trailer from an available show.
 
-* System dependencies
+* On click of an available movie, user is brought to a fullScreen where the movie is played
 
-* Configuration
+# Features
+* The jumbotron(video) in the browse page automaticaly plays whenever a user logs in
+https://user-images.githubusercontent.com/68972854/112644194-8580bd00-8e1b-11eb-87a0-c5797737a99c.mp4
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-Welcome To My HomeFlicks App
