@@ -12,10 +12,11 @@ class VideoIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchGenres();
+    this.props.genres.length > 0 ? this.props.genres : this.props.fetchGenres();
   }
 
   render () {
+    debugger
     let genreList = this.props.genres.map((genre, index) => {
       return(
         <>
