@@ -2,16 +2,17 @@ import React from 'react';
 import VideoIndex from './video_index';
 import {fetchGenres} from '../../actions/genre_actions';
 import {connect} from 'react-redux';
-import {fetchMovie} from '../../actions/movie_actions'
-import {deleteMovie, saveMovie} from '../../actions/mylist_actions'
+import {fetchMovie} from '../../actions/movie_actions';
+import {deleteMovie, saveMovie} from '../../actions/mylist_actions';
+import {selectAllVideos} from "../../reducers/selectors"
 
 const mstp = state => {
   return {
     genres: Object.values(state.entities.genres),
     userId: state.session.id,
     myList: state.entities.users[state.session.id].myList,
-    myListName: 'My List'
-    // movies: Object.values(state.entities.genres.movies)
+    myListName: 'My List',
+    movies: selectAllVideos(state)
   }
 }
 
