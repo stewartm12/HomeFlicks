@@ -24,7 +24,7 @@ class NavBar extends React.Component {
   	  <>
   	    <div className="navbar-container">
   	      <div className="nav-link">
-  	        <Link to="/browse">
+  	        <Link to={"/browse"}>
   	          <img
   	            src={window.logo}
   	            alt="homeflicks logo"
@@ -33,7 +33,7 @@ class NavBar extends React.Component {
   	        </Link>
   	        <ul className="nav-link-content">
   	          <li>
-  	            <Link to="/browse">Home</Link>
+  	            <Link to={"/browse"}>Home</Link>
   	          </li>
 
   	          {/* <Link to="/browse/tvshows">TV Shows</Link>
@@ -45,7 +45,7 @@ class NavBar extends React.Component {
   	            <a>Movies</a>
   	          </li>
   	          <li>
-  	            <Link to="/browse/my-list">My List</Link>
+  	            <Link to={"/my-list"}>My List</Link>
   	          </li>
   	        </ul>
   	      </div>
