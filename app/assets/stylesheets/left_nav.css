@@ -1,9 +1,9 @@
-.nav-link {
+/* .nav-link {
   display: flex;
   align-items: center;
-  /* justify-content: space-between; */
+  justify-content: space-between; */
   /* position: absolute; */
-  /* z-index: 300px; */
+  /* z-index: 300px;
   width: 100%;
 }
 
@@ -42,8 +42,14 @@ html {
 }
 
 .main-container {
-  /* width: fit-content; */
+  width: fit-content;
   height: vmax;
   background-color: #141414;
   
 }
+
+@media(max-width: 800px) {
+  .nav-link {
+    
+  }
+} */

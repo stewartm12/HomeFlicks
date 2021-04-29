@@ -3,7 +3,7 @@
   height: 100%;
   object-fit: cover;
   filter: brightness(30%);
-  position: fixed;
+  position: absolute;
 }
 
 .session-body {
@@ -27,7 +27,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
   height: 55%;
-  width: 25%;
+  min-width: 380px;
 }
 
 .session-form > h1 {
@@ -126,8 +126,8 @@ input:not([value=""]) + .session-float{
 
 .session-logo {
   height: 150px;
-  margin-top: -40px;
-  margin-left: 40px;
+  position: absolute;
+  top: -30px;
 }
 
 .password-input {
@@ -162,4 +162,30 @@ input:not([value=""]) + .password-float {
   cursor: text;
   font-size: 20px;
   transition: 0.2s ease all;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
+
+@media(max-width: 740px) {
+  .session-homebackground {
+    filter: brightness(0%);
+  }
+
+  .session-form {
+    padding: 0px;
+    padding-left: 100px;
+    left: 30%;
+    top: 40%;
+    width: 100vw;
+  }
+
+  .session-iniputs {
+    width: 100vw;
+  }
+
+  .session-logo {
+    left: 0;
+  }
 }

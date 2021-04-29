@@ -3,7 +3,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {saveMovie, deleteMovie} from '../../actions/mylist_actions';
 import MyList from './mylist';
-import VideoIndex from '../navbar/video_index';
+import VideoIndex from '../videos/video_index';
 import {withRouter} from 'react-router-dom'
 
 const mSTP = state => {

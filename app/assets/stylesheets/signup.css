@@ -8,19 +8,19 @@
 .signup-form-box {
   top: 440px;
   left: 50%;
-  margin-right: -50%;
+  /* margin-right: -50%; */
   transform: translate(-50%, -50%);
   width: 450px;
   height: 600px;
   position: absolute;
   border-radius: 7px;
   color: black;
-  margin-left: -45px;
+  /* margin-left: -45px; */
 }
 
 .signup-form {
-  margin-left: 50px;
-    margin-top: 10%;
+  /* margin-left: 50px;
+    margin-top: 10%; */
 }
 
 .signup-submit {
@@ -87,7 +87,7 @@
 }
 
 .signup-container {
-  height: 740px;
+  height: 100vh;
   background: white;
 } 
 
@@ -102,7 +102,20 @@
   border: none;
   outline: none;
   font-size: 19px;
-    margin-left: 50px;
     z-index: 333;
     cursor: pointer;
+}
+
+@media(max-width: 570px) {
+  .signup-input input {
+  width: 80vw;
+  }
+
+  .demo-btn {
+    width: 80vw;
+  }
+
+  .signup-form input[type=submit] {
+  width: 80vw;
+}
 }

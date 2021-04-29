@@ -16,7 +16,8 @@ import {
     faVolumeUp,
     faExpand,
     faPlusCircle,
-    faCheckCircle
+    faCheckCircle,
+    faSearch
 
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -34,5 +35,6 @@ library.add(
     faVolumeUp,
     faExpand,
     faPlusCircle,
-    faCheckCircle
+    faCheckCircle,
+    faSearch
 );

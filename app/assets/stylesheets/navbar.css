@@ -1,0 +1,241 @@
+.background {
+	background-color: #141414;
+}
+
+.navbar-container {
+	position: relative;
+  display: flex;
+  justify-content: space-between;
+  /* width: 95vw;
+  margin: 0 auto; */
+	height: 68px;
+	color: white;
+	padding: 0 50px;
+}
+
+.nav-link {
+	display: flex;
+  align-items: center;
+  /* justify-content: space-around;
+  width: 20%; */
+}
+
+.browse-logo {
+  width: 100px;
+}
+
+.nav-link-content {
+	display: flex;
+}
+
+.nav-link-content > li > a {
+	margin-left: 20px;
+	color: white;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.right-nav {
+	display: flex;
+	align-items: center;
+}
+
+.search-form-container {
+	margin-right: 20px;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  
+  border-top: 10px solid white;
+	margin-left: 5px;
+}
+
+.profile-logo {
+	height: 40px;
+}
+
+.dropdown-container {
+	position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+	display: flex;
+	align-items: center;
+	position: relative;
+	/* padding-bottom: 50px; */
+
+}
+
+.dropdown-content {
+	/* display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1; */
+	display: none;
+  white-space: nowrap;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 20px;
+	z-index: 1;
+}
+
+.dropdown-content a {
+  /* display: block;
+  padding: 10px 20px;
+  background-color: black;
+  border-bottom: 1px solid darkgray; */
+	cursor: pointer;
+	color: white;
+	text-decoration: none;
+	display: block;
+  padding: 10px 20px;
+  background-color: black;
+  border-bottom: 1px solid darkgray;
+}
+
+.dropdown-container:hover > .dropdown-content {
+	display: block;
+}
+
+.dropdown-content:after {
+	position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px;
+  width: 0;
+  height: 0;
+  content: '';
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+	margin-bottom: 50px;
+}
+
+
+input[type=search] {
+	/* display: none; */
+	width: 0px;
+	padding-left: 10px;
+	color: transparent;
+	cursor: pointer;
+}
+
+input[type=search]:focus {
+	display: block;
+	width: 130px;
+	padding-left: 32px;
+	color: #000;
+	background-color: #fff;
+	cursor: auto;
+}
+
+/* .hidden-search-bar {
+  animation: hide-search;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+.visible-search-bar {
+  animation: show-search;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes hide-search {
+  0% {
+    width: 250px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  65% {
+    border: 1px solid rgba(255, 255, 255, 0);
+  }
+  100% {
+    width: 0px;
+    border: 1px solid rgba(255, 255, 255, 0);
+    background-color: rgba(0, 0, 0, 0);
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes show-search {
+  0% {
+    width: 0px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    width: 250px;
+    border: 1px solid white;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation-timing-function: ease-in;
+  }
+} */
+
+.profile-logo {
+  max-height: 30px;
+  max-width: 30px;
+  margin-right: 5px;
+  margin-left: 15px;
+	border-radius: 5px;
+}
+
+.search-form > input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	box-sizing: content-box;
+	font-family: inherit;
+}
+.search-form > input::-webkit-search-decoration,
+.search-form > input::-webkit-search-cancel-button {
+	color: white; 
+}
+
+
+input[type=search] {
+	background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
+	width: 50px;
+	color: white;
+
+	-webkit-transition: all .5s;
+	transition: all .5s;
+}
+/* input[type=search]:focus {
+	width: 100px;
+	background-color: transparent;
+	border-color: white;
+	color: white;
+} */
+
+.search-form input[type=search] {
+	width: 10px;
+	padding-right: 10px;
+	color: transparent;
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+}
+
+.search-form input[type=search]:focus {
+	width: 200px;
+	height: 30px;
+	padding-left: 32px;
+	color: white;
+	border: 1px solid white;
+	background-color: transparent;
+	cursor: auto;
+}
+
+.search-form:focus input::-webkit-input-placeholder {
+	color: transparent;
+}
