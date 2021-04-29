@@ -74,7 +74,8 @@ class SessionForm extends React.Component {
           </div>
           <div className="bottom-form">
           <p >New to HomeFlicks?</p>
-          <Link to="/">Sign up now</Link>
+          &nbsp;
+          <Link to="/" className="login-link">Sign up now</Link>
           </div>
         </form>
         

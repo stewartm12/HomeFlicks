@@ -72,7 +72,7 @@ class Banner extends React.Component {
             </div>
               <div className="banner-description">
               <p>{movie.description}</p>
-              <p className="banner-rating">{movie.rating}</p>
+              {/* <p className="banner-rating">{movie.rating}</p> */}
               </div>
               </div>
             <div className="banner-controls">

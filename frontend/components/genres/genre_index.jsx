@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoIndexItem from '../navbar/video_index_item';
+import VideoIndexItem from '../videos/video_index_item';
 
 
 class GenreIndex extends React.Component{
