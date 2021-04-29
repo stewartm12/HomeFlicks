@@ -7,12 +7,13 @@ import {deleteMovie, saveMovie} from '../../actions/mylist_actions';
 import {selectAllVideos} from "../../reducers/selectors"
 
 const mstp = state => {
+  debugger
   return {
-    genres: Object.values(state.entities.genres),
+    genres: selectAllVideos(state),
     userId: state.session.id,
     myList: state.entities.users[state.session.id].myList,
     myListName: 'My List',
-    movies: selectAllVideos(state)
+    // movies: selectAllVideos(state)
   }
 }
 
