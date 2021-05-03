@@ -1,5 +1,5 @@
 import React from 'react';
-import GenreIndex from '../genres/genre_index';
+import GenreIndexContainer from '../genres/genre_index_container';
 import BannerContainer from '../banner/banner_container'
 
 class VideoIndex extends React.Component {
@@ -15,17 +15,24 @@ class VideoIndex extends React.Component {
     this.props.genres.length > 0 ? this.props.genres : this.props.fetchGenres();
   }
 
-  render () {
-    debugger
-    let genreList = this.props.genres.map((genre, index) => {
-      return(
-        <>
-          <GenreIndex key={`genre${index}`} userId={this.props.userId} genre={genre} movies={genre.movies} saveMovie={this.props.saveMovie} deleteMovie={this.props.deleteMovie}/> 
-        </>
-      )
-    })
-    let genres = this.props.genres ? genreList : "";
 
+  displayGenres() {
+    debugger
+    return this.props.genres.map((genre, index) => {
+      return (
+        <>
+          <GenreIndexContainer
+            key={`${index}`}
+            movies={genre.movies}
+            genre={genre}
+          />
+        </>
+      );
+    });
+  }
+
+  render () {
+    let genres = this.props.genres.length ? this.displayGenres() : "";
     return(
       <div>
         <div className="banner-wrapper">

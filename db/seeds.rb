@@ -36,6 +36,8 @@ fiftyShades = Movie.create!(
 
 file1 = URI.open('https://homeflicks-seed.s3.amazonaws.com/fifty_shades_of_grey.mp4')
 fiftyShades.trailer.attach(io: file1, filename: 'fifty_shades_of_grey.mp4')
+image1 = URI.open("https://homeflicks-seed.s3.amazonaws.com/shade_img.png")
+fiftyShades.thumbnail.attach(io: image1, filename: "shade_img.png")
 
 ps_i_love_you = Movie.create!(
   title: 'PS I Love You', 
@@ -45,7 +47,8 @@ ps_i_love_you = Movie.create!(
   )
   file2 = URI.open('https://homeflicks-seed.s3.amazonaws.com/ps_i_love_you.mp4')
   ps_i_love_you.trailer.attach(io: file2, filename: 'ps_i_love_you.mp4')
-
+  image2 = URI.open("https://homeflicks-seed.s3.amazonaws.com/ps_img.jpeg")
+  ps_i_love_you.thumbnail.attach(io: image2, filename: "shade_img.png")
 
 
 twilight = Movie.create!(
@@ -57,6 +60,8 @@ twilight = Movie.create!(
 
 file5 = URI.open('https://homeflicks-seed.s3.amazonaws.com/twilight_1.mp4')
 twilight.trailer.attach(io: file5, filename: 'twilight_1.mp4')
+image3 = URI.open("https://homeflicks-seed.s3.amazonaws.com/twilight_img.jpeg")
+  twilight.thumbnail.attach(io: image3, filename: "twilight_img.jpeg")
 
 west_side_story = Movie.create!(
   title: 'West Side Story', 
@@ -67,7 +72,8 @@ west_side_story = Movie.create!(
 
 file6 = URI.open('https://homeflicks-seed.s3.amazonaws.com/west_side_story.mp4')
 west_side_story.trailer.attach(io: file6, filename: 'west_side_story.mp4')
-
+image4 = URI.open("https://homeflicks-seed.s3.amazonaws.com/west_img.jpeg")
+  west_side_story.thumbnail.attach(io: image4, filename: "west_img.jpeg")
 # Comedy
 
 
@@ -81,6 +87,8 @@ spiderman_far_from_home = Movie.create!(
 
 file9 = URI.open('https://homeflicks-seed.s3.amazonaws.com/spiderman.mp4')
 spiderman_far_from_home.trailer.attach(io: file9, filename: 'spiderman.mp4')
+image5 = URI.open("https://homeflicks-seed.s3.amazonaws.com/spiderman_img.jpeg")
+  spiderman_far_from_home.thumbnail.attach(io: image5, filename: "spiderman_img.jpeg")
 
 good_boys = Movie.create!(
   title: "Good Boys", 
@@ -91,6 +99,8 @@ good_boys = Movie.create!(
 
   file10 = URI.open('https://homeflicks-seed.s3.amazonaws.com/good_kids.mp4')
   good_boys.trailer.attach(io: file10, filename: 'good_kids.mp4')
+  image6 = URI.open("https://homeflicks-seed.s3.amazonaws.com/good_kids_img.png")
+  good_boys.thumbnail.attach(io: image6, filename: "good_kids_img.png")
 
 home_alone = Movie.create!(
   title: "Home Alone", 
@@ -101,6 +111,8 @@ home_alone = Movie.create!(
 
   file11 = URI.open('https://homeflicks-seed.s3.amazonaws.com/home_alone.mp4')
   home_alone.trailer.attach(io: file11, filename: 'home_alone.mp4')
+  image7 = URI.open("https://homeflicks-seed.s3.amazonaws.com/home_alone_img.jpeg")
+  home_alone.thumbnail.attach(io: image7, filename: "home_alone_img.jpeg")
 
 ghost_busters = Movie.create!(
   title: "Ghostbusters", 
@@ -111,6 +123,8 @@ ghost_busters = Movie.create!(
 
   file12 = URI.open('https://homeflicks-seed.s3.amazonaws.com/ghost_busters.m4v')
   ghost_busters.trailer.attach(io: file12, filename: 'ghost_busters.m4v')
+  image8 = URI.open("https://homeflicks-seed.s3.amazonaws.com/ghost_busters_img.png")
+  ghost_busters.thumbnail.attach(io: image8, filename: "ghost_busters_img.png")
 
 # Anime
 naruto_the_last = Movie.create!(
@@ -122,6 +136,8 @@ naruto_the_last = Movie.create!(
 
   file13 = URI.open('https://homeflicks-seed.s3.amazonaws.com/naruto.mp4')
   naruto_the_last.trailer.attach(io: file13, filename: 'naruto.mp4')
+  image9 = URI.open("https://homeflicks-seed.s3.amazonaws.com/naruto_img.jpeg")
+  naruto_the_last.thumbnail.attach(io: image9, filename: "naruto_img.jpeg")
 
 your_name = Movie.create!(
   title: "Your Name", 
@@ -132,6 +148,8 @@ your_name = Movie.create!(
 
   file14 = URI.open('https://homeflicks-seed.s3.amazonaws.com/your_name_1.mp4')
   your_name.trailer.attach(io: file14, filename: 'your_name_1.mp4')
+  image10 = URI.open("https://homeflicks-seed.s3.amazonaws.com/your_name_img.jpeg")
+  your_name.thumbnail.attach(io: image10, filename: "your_name_img.jpeg")
 
 pokemon = Movie.create!(
   title: "Pokemon: The Power of Us", 
@@ -142,6 +160,8 @@ pokemon = Movie.create!(
 
   file15 = URI.open('https://homeflicks-seed.s3.amazonaws.com/pokemon.mp4')
   pokemon.trailer.attach(io: file15, filename: 'pokemon.mp4')
+  image11 = URI.open("https://homeflicks-seed.s3.amazonaws.com/pokemon_img.jpeg")
+  pokemon.thumbnail.attach(io: image11, filename: "pokemon_img.jpeg")
 
 
 my_hero_academia = Movie.create!(
@@ -153,6 +173,8 @@ my_hero_academia = Movie.create!(
 
   file17 = URI.open('https://homeflicks-seed.s3.amazonaws.com/academia.mp4')
   my_hero_academia.trailer.attach(io: file17, filename: 'academia.mp4')
+  image12 = URI.open("https://homeflicks-seed.s3.amazonaws.com/hero_img.png")
+  my_hero_academia.thumbnail.attach(io: image12, filename: "hero_img.png")
 
 
 
@@ -168,11 +190,13 @@ maze_runner = Movie.create!(
 
   file20 = URI.open('https://homeflicks-seed.s3.amazonaws.com/the_death_cure.mp4')
   maze_runner.trailer.attach(io: file20, filename: 'the_death_cure.mp4')
+  image13 = URI.open("https://homeflicks-seed.s3.amazonaws.com/deatch_cure_img.jpeg")
+  maze_runner.thumbnail.attach(io: image13, filename: "deatch_cure_img.jpeg")
 
 
 
 percy_jackson = Movie.create!(
-  title: "Percy Jackson & the Olympians: The Lightning Thief", 
+  title: "Percy Jackson & the Olympians", 
   description: "Always trouble-prone, the life of teenager Percy Jackson (Logan Lerman) gets a lot more complicated when he learns he's the son of the Greek god Poseidon. At a training ground for the children of deities, Percy learns to harness his divine powers and prepare for the adventure of a lifetime: he must prevent a feud among the Olympians from erupting into a devastating war on Earth, and rescue his mother from the clutches of Hades, god of the underworld.",
   year: 2016,
   rating: 'PG-13'
@@ -180,6 +204,8 @@ percy_jackson = Movie.create!(
 
   file22 = URI.open('https://homeflicks-seed.s3.amazonaws.com/percy_jackson_1.mp4')
   percy_jackson.trailer.attach(io: file22, filename: 'percy_jackson_1.mp4')
+  image14 = URI.open("https://homeflicks-seed.s3.amazonaws.com/percy_img.webp")
+  percy_jackson.thumbnail.attach(io: image14, filename: "percy_img.webp")
 
 back_to_the_future = Movie.create!(
   title: "Back To The Future III", 
@@ -190,6 +216,8 @@ back_to_the_future = Movie.create!(
 
   file23 = URI.open('https://homeflicks-seed.s3.amazonaws.com/back_to_the_future_3.mp4')
   back_to_the_future.trailer.attach(io: file23, filename: 'back_to_the_future_3.mp4')
+  image16 = URI.open("https://homeflicks-seed.s3.amazonaws.com/back_3_img.jpeg")
+  back_to_the_future.thumbnail.attach(io: image16, filename: "back_3_img.jpeg")
 
 star_wars = Movie.create!(
   title: "Star Wars: The Force Awakens", 
@@ -200,6 +228,8 @@ star_wars = Movie.create!(
 
   file24 = URI.open('https://homeflicks-seed.s3.amazonaws.com/star_wars.mp4')
   star_wars.trailer.attach(io: file24, filename: 'star_wars.mp4')
+  image17 = URI.open("https://homeflicks-seed.s3.amazonaws.com/star_wars_img.jpeg")
+  star_wars.thumbnail.attach(io: image17, filename: "star_wars_img.jpeg")
 
 # romance movies
 GenreMovie.create!(movie_id: fiftyShades.id, genre_id: romance.id)

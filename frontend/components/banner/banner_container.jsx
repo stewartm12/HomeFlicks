@@ -1,12 +1,13 @@
 import {fetchMovie} from '../../actions/movie_actions';
 import {deleteMovie, saveMovie} from '../../actions/mylist_actions';
 import Banner from './banner';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import {selectBannerVideo} from "../../reducers/selectors"
 
 const mSTP = state => {
   return {
     userId: state.session.id,
-    movie: Object.values(state.entities.movies)
+    movie: selectBannerVideo(state)
   }
 }
 

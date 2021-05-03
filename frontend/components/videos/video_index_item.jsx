@@ -14,6 +14,8 @@ class VideoIndexItem extends React.Component {
       movieId: this.props.movie.id,
       userId: this.props.userId
     }
+    this.stopMiniVideo = this.stopMiniVideo.bind(this);
+    this.playMiniVideo = this.playMiniVideo.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this)
     this.displayControls = this.displayControls.bind(this);
     this.removeMovie = this.removeMovie.bind(this);
@@ -74,8 +76,19 @@ class VideoIndexItem extends React.Component {
     }    
   }
 
+  playMiniVideo(e) {
+    e.target.play();
+  }
+
+  stopMiniVideo(e) {
+    e.target.load();
+    e.target.pause();
+
+  }
+
 
   render() {
+    debugger
     const playPause = this.state.playButton ? <FontAwesomeIcon icon={['fa', 'pause']} /> : <FontAwesomeIcon icon={['fa', 'play']} />;
     const sound = this.state.volume ?  <FontAwesomeIcon icon={['fa', 'volume-up']}/> : <FontAwesomeIcon icon={['fa', 'volume-mute']}/>;
     const add = <FontAwesomeIcon icon={['fa', 'plus-circle']}/>
@@ -83,10 +96,10 @@ class VideoIndexItem extends React.Component {
 
     const saveOrRemove = this.state.saved ? <button onClick={this.removeMovie}>{check}</button> : <button onClick={this.saveMovie}>{add}</button>;
 
-    return(
+    return (
+      
       <div className="whole-player-container">
-
-        <div className="player" onMouseEnter={this.displayControls}  onMouseLeave={this.displayControls} ref={this.playerContainer}>
+        {/* <div className="player" onMouseEnter={this.displayControls}  onMouseLeave={this.displayControls} ref={this.playerContainer}>
           <div className="video-wrapper"> 
             <video ref={this.video} onTimeUpdate={this.setTime} muted={!this.state.volume}>
               <source src={this.props.movie.trailer} type="video/mp4"/>
@@ -102,9 +115,13 @@ class VideoIndexItem extends React.Component {
               <p className="video-rating">{this.props.movie.rating}</p>
             </div>
           </div>
-        </div>
+        </div> */}
+
+        <video poster={this.props.movie.thumbnail} muted="muted" onMouseOver={this.playMiniVideo} onMouseLeave={this.stopMiniVideo}>
+          <source src={this.props.movie.trailer} type="video/mp4" />
+        </video>
       </div>
-  )}
+    );}
 }
 
 export default VideoIndexItem;

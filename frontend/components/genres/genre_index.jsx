@@ -1,31 +1,31 @@
 import React from 'react';
-import VideoIndexItem from '../videos/video_index_item';
+// import VideoIndexItem from '../videos/video_index_item';
+import VideoItemContainer from "../videos/video_item_container"
 
 
-class GenreIndex extends React.Component{
+class GenreIndex extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = {hidden: true}
+    super(props)
   }
-
   render() {
+  let movies = Object.values(this.props.movies);
+  let movieList = movies.map((movie, index) => {
+    return (
+      <VideoItemContainer
+        key={index}
+        movie={movie}
+      />
+      )
+    });
 
-    let movies = Object.values(this.props.movies) ? Object.values(this.props.movies) :  "";
-    let movieList = (!movies) ? "" : movies.map((movie, index) => {
-      return (
-        <VideoIndexItem key={`movie${index}`} movie={movie} userId={this.props.userId} saveMovie={this.props.saveMovie} deleteMovie={this.props.deleteMovie}/>
-        )
-      })
-      return (
-        <div className="genre-index ">
-      <h2 className="genre-name"><strong>{this.props.genre.name}</strong></h2>
-      <div className="row-wrapper">
-      {movieList}
+  return (
+      <div className="genre-index ">
+        <h2 className="genre-name"><strong>{this.props.genre.name}</strong></h2>
+        <div className="row-wrapper">
+          {movieList}
+        </div>
       </div>
-    </div>
-  )
+    )
 }
 }
-
-
 export default GenreIndex;

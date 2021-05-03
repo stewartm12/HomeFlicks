@@ -14,6 +14,7 @@ class Movie < ApplicationRecord
   validates :title, :description, :year, :rating, presence: true
 
   has_one_attached :trailer
+  has_one_attached :thumbnail
 
   has_one :genre,
   foreign_key: :movie_id,
