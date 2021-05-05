@@ -17,12 +17,12 @@ class VideoIndex extends React.Component {
 
 
   displayGenres() {
-    debugger
+    
     return this.props.genres.map((genre, index) => {
       return (
         <>
           <GenreIndexContainer
-            key={`${index}`}
+            key={`vid`}
             movies={genre.movies}
             genre={genre}
           />
@@ -40,6 +40,8 @@ class VideoIndex extends React.Component {
         </div>
         <div className="firstvideo">
           {genres}
+        </div>
+        <div className="bottom-links">
         </div>
       </div>
     )

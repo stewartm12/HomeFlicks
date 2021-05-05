@@ -8,6 +8,7 @@ import MyListContainer from './myList/mylist_container'
 import './fontawesome';
 import NavBarContainer from "./navbar/navbar_container";
 import VideoIndexContainer from "./videos/video_index_container";
+import displaySearchContainer from "./search/display_search_container"
 
 
 
@@ -20,7 +21,8 @@ const App = () => (
       <AuthRoute exact path="/login" component={LoginFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
       <ProtectedRoute path="/browse" component={VideoIndexContainer} />
-      <ProtectedRoute exact path="/my-list" component={MyListContainer}/>
+      <ProtectedRoute exact path="/my-list" component={MyListContainer} />
+      <ProtectedRoute path="/search" component={displaySearchContainer} />
       {/* <Route path="/" component={}></Route> */}
       {/* <Pr otectedRoute exact path="/my-list" component={MyListContainer}/> */}
     </Switch>

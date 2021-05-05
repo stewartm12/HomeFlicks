@@ -1,5 +1,5 @@
 import React from 'react';
-import VideoIndexItem from '../videos/video_index_item';
+import VideoItemContainer from "../videos/video_item_container";
 
 class MyList extends React.Component {
   constructor(props) {
@@ -10,18 +10,32 @@ class MyList extends React.Component {
 
   render () {
     let videoItems = this.state.movies.map(movie => {
-      return(
-        <VideoIndexItem key={movie.id} movie={movie} userId={this.props.userId} saveMovie={this.props.saveMovie} deleteMovie={this.props.deleteMovie}/>
-      )
+      return (
+        <VideoItemContainer
+          key={`movie-${movie.id}`}
+          movie={movie}
+        />
+      );
     })
-    return(
-      <div className="genre-index">
-        <h2 className="genre-name"><strong>My List</strong></h2>
-          <div className="row-wrapper">
-          {videoItems.length > 0 ? videoItems : <p className="no-favorites">You have no favorites</p>}
-          </div>
+
+    let displayVideos =
+      videoItems.length > 0 ? (
+        videoItems
+      ) : (
+        <p className="no-favorites">You have no favorites</p>
+      );
+
+
+    return (
+      <div className="genre-index  my-list">
+        <h2 className="genre-name">
+          <strong>My List</strong>
+        </h2>
+        <div className="row-wrapper">
+          {displayVideos}
+        </div>
       </div>
-    )
+    );
   }
 }
 

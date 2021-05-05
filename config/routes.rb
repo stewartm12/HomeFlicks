@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     resources :genres, only: [:index]
     resources :movies, only: [:show]
     resource :my_list, only: [:create, :destroy]
+
+    get 'search', to: 'movies#search', as: :movies_search
   end
 end

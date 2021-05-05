@@ -1,4 +1,4 @@
-.mylist-container {
+/* .mylist-container {
   color: white;
   height: vmax;
   position: absolute;
@@ -13,4 +13,9 @@
   width: 100%;
   display: flex;
   margin: 0px 7px;
+} */
+
+.my-list {
+  position: absolute;
+  padding: 60px 0 0 0;
 }
