@@ -2,7 +2,7 @@ class Api::MyListsController < ApplicationController
   def create 
     my_list = UserMovie.new(my_list_params)
     if my_list.save
-      @user = User.find(my_list.user_id)
+      @user = User.find(my_list.user_id)      
       render 'api/users/show'
     else 
       render json: my_list.errors.full_messages

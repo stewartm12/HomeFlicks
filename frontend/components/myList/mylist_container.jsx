@@ -2,14 +2,16 @@ import React from 'react';
 // import MyList from './mylist';
 import {connect} from 'react-redux';
 import {saveMovie, deleteMovie} from '../../actions/mylist_actions';
-import MyList from './mylist';
-import VideoIndex from '../videos/video_index';
+// import MyList from './mylist';
+// import VideoIndex from '../videos/video_index';
 import {withRouter} from 'react-router-dom'
+import GenreIndex from '../genres/genre_index';
 
 const mSTP = state => {
   const userId = state.session.id;
+  debugger
   return {
-    movies: Object.values(state.entities.users[userId].myList),
+    // movies: Object.values(state.entities.users[userId].myList),
     userId: state.session.id,
     myList: state.entities.users[state.session.id].myList,
   }
@@ -23,4 +25,4 @@ const mDTP = dispatch => {
   }
 }
 
-export default withRouter(connect(mSTP, mDTP)(MyList));
+export default withRouter(connect(mSTP, mDTP)(GenreIndex));

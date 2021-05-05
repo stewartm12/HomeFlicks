@@ -6,14 +6,15 @@ import Modal from "../modal/modal";
 
 class VideoIndexItem extends React.Component {
   constructor(props) {
+    
     super(props);
     this.state = {
       playButton: false,
       volume: true,
       show: false,
-      saved: false,
       movieId: this.props.movie.id,
       userId: this.props.userId,
+      saved: this.savedVideo()
     };
     this.stopMiniVideo = this.stopMiniVideo.bind(this);
     this.playMiniVideo = this.playMiniVideo.bind(this);
@@ -30,6 +31,16 @@ class VideoIndexItem extends React.Component {
     this.description = React.createRef();
     this.video = React.createRef();
     this.videoTimeOut;
+  }
+
+  savedVideo() {
+    const {type} = this.props;
+    // 
+    if (type === "MY-LIST") {
+      return true;
+    }
+
+    return false;
   }
 
   componentDidMount() {
@@ -98,15 +109,20 @@ class VideoIndexItem extends React.Component {
   // }
 
   playMiniVideo(e) {
+    if (this.videoTimeOut) {
+      clearTimeout(this.videoTimeOut);
+      this.videoTimeOut = undefined;
+    }
     this.videoTimeOut = setTimeout(() => {
       this.video.current.play();
-    }, 1000);
-
+    }, 2000);
+    
     this.videoControls.current.classList.remove("none");
     // this.videoItemDesc.current.classList.remove("desc-hidden");
   }
 
   stopMiniVideo(e) {
+    
     clearTimeout(this.videoTimeOut);
     this.video.current.load();
     this.video.current.pause();
@@ -116,7 +132,7 @@ class VideoIndexItem extends React.Component {
 
   togglePlay() {
     clearTimeout(this.videoTimeOut);
-    debugger
+    
     let playPromise = this.video.current.play();
     if (playPromise !== undefined) {
       playPromise.then(() => {

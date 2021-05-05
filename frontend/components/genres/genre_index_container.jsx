@@ -5,14 +5,15 @@ import { connect } from "react-redux";
 import { fetchMovie } from "../../actions/movie_actions";
 import { deleteMovie, saveMovie } from "../../actions/mylist_actions";
 import { selectAllVideos } from "../../reducers/selectors";
+import { withRouter } from "react-router-dom";
+
 
 const mstp = (state) => {
     
   return {
     genres: selectAllVideos(state),
     userId: state.session.id,
-    myList: state.entities.users[state.session.id].myList,
-    myListName: "My List",
+    myList: state.entities.users[state.session.id].myList
     // movies: selectAllVideos(state)
   };
 };
@@ -26,4 +27,4 @@ const mdtp = (dispatch) => {
   };
 };
 
-export default connect(mstp, mdtp)(GenreIndex);
+export default withRouter(connect(mstp, mdtp)(GenreIndex));

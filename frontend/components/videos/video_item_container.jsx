@@ -5,7 +5,8 @@ import { withRouter } from "react-router-dom";
 
 const mSTP = (state) => {
   return {
-    userId: state.session.id
+    userId: state.session.id,
+    myList: state.entities.users[state.session.id].myList,
   };
 };
 

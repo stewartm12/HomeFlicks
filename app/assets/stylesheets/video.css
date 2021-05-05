@@ -149,7 +149,7 @@
   transform:scale(1.1, 1.2);
   z-index: 10;
   position: relative;
-  margin-top: -100px;
+  margin-top: -90px;
 }
 
 .bottom-links {
@@ -196,6 +196,12 @@
   margin-top: -5px;
 }
 
+.no-saved-videos {
+  color: white;
+  padding: 20px 0;
+  font-size: x-large;
+}
+
 @media(max-width: 800px) {
   .genre-name {
     font-size: x-large;
@@ -204,6 +210,12 @@
   .right-nav {
     margin-right: 50px;
   }
+
+  .no-saved-videos {
+  color: white;
+  padding: 20px 0;
+  font-size: smaller;
+}
 }
 
 @media(max-width: 1720px) {
