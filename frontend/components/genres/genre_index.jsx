@@ -27,7 +27,7 @@ class GenreIndex extends React.Component {
 
     
     let movies = Object.values(this.props.myList)
-    debugger
+    
     let movieList = movies.map((movie, index) => {
       return <VideoItemContainer key={index} movie={movie} type="MY-LIST" />;
     });

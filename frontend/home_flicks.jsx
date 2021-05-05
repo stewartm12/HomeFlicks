@@ -20,17 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
       session: { id: window.currentUser.id }
     };
     store = configureStore(preloadedState);
+    debugger
     delete window.currentUser;
   } else {
     store = configureStore();
   }
-  window.logout = logout;
-  window.login = login;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.saveMovie = saveMovie;
-  window.deleteMovie = deleteMovie;
-  window.fetchGenres = fetchGenres;
-  window.fetchMovie = fetchMovie;
   ReactDOM.render(<Root store={store}/>, root);
 })

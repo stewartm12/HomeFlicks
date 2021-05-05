@@ -9,7 +9,7 @@ import GenreIndex from '../genres/genre_index';
 
 const mSTP = state => {
   const userId = state.session.id;
-  debugger
+  
   return {
     // movies: Object.values(state.entities.users[userId].myList),
     userId: state.session.id,
