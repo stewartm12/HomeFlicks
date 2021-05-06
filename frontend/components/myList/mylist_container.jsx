@@ -7,9 +7,8 @@ import {saveMovie, deleteMovie} from '../../actions/mylist_actions';
 import {withRouter} from 'react-router-dom'
 import GenreIndex from '../genres/genre_index';
 
-const mSTP = state => {
-  const userId = state.session.id;
-  
+const mSTP = state => {  
+  debugger
   return {
     // movies: Object.values(state.entities.users[userId].myList),
     userId: state.session.id,

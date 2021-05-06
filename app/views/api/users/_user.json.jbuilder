@@ -1,5 +1,5 @@
 json.extract! user, :id, :email
-# 
+
 json.myList do
     user.movie_names.each { |movie| 
     json.set! movie.id do

@@ -52,7 +52,7 @@ class VideoIndexItem extends React.Component {
   }
 
   handleResizeWindow(e) {
-    if (this.video.current.webkitDisplayingFullscreen) {
+    if (this.video.current.fullscreenElement) {
       this.togglePlay();
     } else {
       this.video.current.load();

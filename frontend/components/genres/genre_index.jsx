@@ -19,6 +19,7 @@ class GenreIndex extends React.Component {
   }
 
   displayMyList() {
+    debugger
     if (!this.props.myList) {
       return (
         <h3 className="no-saved-videos">You have no saved videos currently</h3>
@@ -56,12 +57,12 @@ class GenreIndex extends React.Component {
   const urlPage = this.props.location.pathname === "/browse" ? this.displayBrowse() : this.displayMyList();
   const title = this.props.location.pathname === "/browse" ? this.props.genre.name : "My List";
   const listClass = this.props.location.pathname === "/browse" ? "" : "my-list"
-
+  const rowClass = this.props.location.pathname === "/browse" ? "" : "row-list";
   
   return (
       <div className={`genre-index ${listClass}`}>
         <h2 className="genre-name"><strong>{title}</strong></h2>
-        <div className="row-wrapper">
+        <div className={`row-wrapper ${rowClass}`}>
           {urlPage}
         </div>
       </div>
