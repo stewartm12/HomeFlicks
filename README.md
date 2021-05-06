@@ -22,12 +22,15 @@
 # Features
 ## Dynamic Banner Video
 * The jumbotron(video) in the browse page automaticaly plays after a few seconds whenever a user logs in
+
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/68972854/117232356-f76efd80-adee-11eb-96c5-77164778d440.gif)
 
 ## Dynamic Video Thumbnail
 * When the mouse hovers over a thumbnail, the image dynamically grows and fires a function to play the trailer. The trailer will play after a few seconds have passed, and once the mouse leaves, the video will display its thumbnail once again.
+
 ![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/68972854/117232668-9c89d600-adef-11eb-9595-629266e46067.gif)
 
 ## Dynamic Search Bar
 * A dynamic search bar was implemented to find the desired movie. As the search bar gets updated repeatedly, it checks the backend for any movies that is on par with what the user is searching for.
+
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/68972854/117233782-ca701a00-adf1-11eb-992a-3724df17ed8e.gif)
