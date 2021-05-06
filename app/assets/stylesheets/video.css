@@ -182,6 +182,10 @@ visibility: hidden;
 .video-rating {
   border: hidden;
 }
+
+.background {
+  overflow-x: hidden;
+}
 }
 
 @media(max-width: 720px) {
