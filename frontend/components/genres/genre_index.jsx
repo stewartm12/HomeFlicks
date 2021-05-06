@@ -19,7 +19,7 @@ class GenreIndex extends React.Component {
   }
 
   displayMyList() {
-    debugger
+    
     if (!this.props.myList) {
       return (
         <h3 className="no-saved-videos">You have no saved videos currently</h3>
