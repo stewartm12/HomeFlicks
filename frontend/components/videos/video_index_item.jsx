@@ -35,8 +35,14 @@ class VideoIndexItem extends React.Component {
     if (type === "MY-LIST") {
       return true;
     }
-
-    return false;
+    if (this.props.myList === undefined) return false;
+    const movieId = this.props.movie.id;
+    const myListId = Object.values(this.props.myList)[0].id;
+    debugger
+    if (myListId === movieId) {
+      return true;
+    }
+    return false
   }
 
   componentDidMount() {
@@ -119,7 +125,7 @@ class VideoIndexItem extends React.Component {
     ) : (
       <button onClick={this.saveMovie}>{add}</button>
     );
-
+      debugger
     return (
       <div
         className={`whole-player-container ${containerClass}`}

@@ -40,7 +40,8 @@ class Banner extends React.Component {
           this.video.current.play();
         }, 5000);
       } else {
-        video.pause();
+        clearTimeout(this.videoTimeout)
+        video.load();
       }
   }
 
