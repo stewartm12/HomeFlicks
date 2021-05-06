@@ -35,7 +35,11 @@ class Banner extends React.Component {
   handleScroll() {
       let video = this.video.current;
 
+      if (!video) return;
+
       if (window.pageYOffset < 100) {
+        // debugger
+        if (this.videoTimeout) clearTimeout(this.videoTimeout);
         this.videoTimeout = setTimeout(() => {
           this.video.current.play();
         }, 5000);
