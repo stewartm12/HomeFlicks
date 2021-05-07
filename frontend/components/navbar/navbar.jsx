@@ -47,7 +47,7 @@ class NavBar extends React.Component {
       clearTimeout(this.searchTimeout);
       this.setState({ search: textInput.value });
 
-      debugger
+      
       this.searchTimeout = setTimeout(() => {
         this.props.search(this.state.search);
 

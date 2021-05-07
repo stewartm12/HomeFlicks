@@ -38,7 +38,7 @@ class Banner extends React.Component {
       if (!video) return;
 
       if (window.pageYOffset < 100) {
-        // debugger
+        // 
         if (this.videoTimeout) clearTimeout(this.videoTimeout);
         this.videoTimeout = setTimeout(() => {
           this.video.current.play();
