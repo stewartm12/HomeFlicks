@@ -10,8 +10,9 @@ class Api::MoviesController < ApplicationController
         if query_string.length == 0 
             render json: {}
         else 
+            query_string = query_string.chars.map{|char| char.downcase}.join
             @movies = Movie.with_attached_thumbnail
-                .where('title LIKE ?', '%' + query_string + '%')
+                .where('LOWER(title) LIKE ?', '%' + query_string + '%')
 
             if @movies.empty?
                 render json: {}
