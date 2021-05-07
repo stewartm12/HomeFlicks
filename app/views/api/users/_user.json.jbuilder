@@ -10,6 +10,7 @@ json.myList do
         json.rating  movie.rating
         json.trailer url_for(movie.trailer)
         json.thumbnail url_for(movie.thumbnail)
+        json.videoType movie.video_type
     end
 }
 end

@@ -47,7 +47,7 @@ class VideoIndexItem extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("fullscreenchange", this.handleResizeWindow);
+    // window.addEventListener("fullscreenchange", this.handleResizeWindow);
   }
 
   componentWillUnmount() {
@@ -55,7 +55,7 @@ class VideoIndexItem extends React.Component {
   }
 
   handleResizeWindow(e) {
-    if (this.video.current.fullscreenElement) {
+    if (window.innerHeight === screen.height) {
       this.togglePlay();
     } else {
       this.video.current.load();
@@ -100,17 +100,24 @@ class VideoIndexItem extends React.Component {
   }
 
   togglePlay() {
-    clearTimeout(this.videoTimeOut);
-    
-    let playPromise = this.video.current.play();
-    if (playPromise !== undefined) {
-      playPromise.then(() => {
-        this.video.current.currentTime = 0;
-        this.video.current.requestFullscreen();
-        this.setState({ volume: false });
-      })
-      .catch(error => this.video.current.requestFullscreen())
-    }
+    // clearTimeout(this.videoTimeOut);
+    // 
+    // this.video.current.play();
+    // if (playPromise !== undefined) {
+    //   
+    //   playPromise.then(() => {
+    //     this.video.current.currentTime = 0;
+    //     this.video.current.requestFullscreen();
+    //     this.setState({ volume: false });
+    //   })
+    //   .catch(error => this.video.current.requestFullscreen())
+    // }
+    if (this.videoTimeout) clearTimeout(this.videoTimeout);
+    this.setState({ volume: false });
+    this.video.current.load();
+    // this.video.current.play();
+    ;
+    this.video.current.requestFullscreen();
   }
 
   render() {

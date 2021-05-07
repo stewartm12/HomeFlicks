@@ -3,6 +3,7 @@ import { logout } from '../../actions/session_actions';
 import NavBar from './navbar';
 import { withRouter } from 'react-router-dom';
 import {searchVideos} from '../../actions/video_actions';
+import { fetchGenres } from '../../util/genre_api_util';
 
 const mapStateToProps = ({ session, entities: { users } }, ownProps) => {
   const query = new URLSearchParams(ownProps.location.search).get('q') || "";
@@ -16,7 +17,7 @@ const mapStateToProps = ({ session, entities: { users } }, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return{
     search: query => dispatch(searchVideos(query)),
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
   }
 };
 

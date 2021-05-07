@@ -9,7 +9,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSearchClick = this.handleSearchClick.bind(this);
+    // this.handleSearchClick = this.handleSearchClick.bind(this);
     this.handleColorChange = this.handleColorChange.bind(this);
 	this.updateSearch = this.updateSearch.bind(this);
     this.navbar = React.createRef();
@@ -21,7 +21,6 @@ class NavBar extends React.Component {
     };
   }
 
-  handleSearchClick() {}
 
   handleColorChange() {
     let windowPosition = window.scrollY > 50;
@@ -89,10 +88,10 @@ class NavBar extends React.Component {
                 {/* <Link to="/browse/tvshows">TV Shows</Link>
   	      <Link to="/browse/movies">Movies</Link> */}
                 <li>
-                  <a>TV Shows</a>
+                  <Link to={"/movies"}>Movies</Link>
                 </li>
                 <li>
-                  <a>Movies</a>
+                  <Link to={"/shows"}>Shows</Link>
                 </li>
                 <li>
                   <Link to={"/my-list"}>My List</Link>
@@ -104,7 +103,7 @@ class NavBar extends React.Component {
               <div className="search-form-container">
                 <form
                   className="search-form"
-                  onClick={this.handleSearchClick}
+                  // onClick={this.handleSearchClick}
                   onSubmit={(e) => e.preventDefault()}
                 >
                   {/* <FontAwesomeIcon icon={["fa", "search"]} /> */}

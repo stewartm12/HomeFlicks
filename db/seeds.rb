@@ -31,7 +31,8 @@ fiftyShades = Movie.create!(
   title: 'Fifty Shades of Grey', 
   description: 'When college senior Anastasia Steele (Dakota Johnson) steps in for her sick roommate to interview prominent businessman Christian Grey (Jamie Dornan) for their campus paper, little does she realize the path her life will take. Christian, as enigmatic as he is rich and powerful, finds himself strangely drawn to Ana, and she to him.',
   year: 2015,
-  rating: 'R'
+  rating: 'R',
+  video_type: "Movie"
   )
 
 file1 = URI.open('https://homeflicks-seed.s3.amazonaws.com/fifty_shades_of_grey.mp4')
@@ -43,7 +44,8 @@ ps_i_love_you = Movie.create!(
   title: 'PS I Love You', 
   description: 'When Gerry (Gerard Butler), the husband of Holly Kennedy (Hilary Swank), dies from an illness, she loses the love of her life. Knowing how hard Holly will take his death, Gerry plans ahead. Beginning on her 30th birthday, she receives the first in a series of letters written by him, designed to ease her grief and encourage her to move forward to a new life.',
   year: 2007,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Movie"
   )
   file2 = URI.open('https://homeflicks-seed.s3.amazonaws.com/ps_i_love_you.mp4')
   ps_i_love_you.trailer.attach(io: file2, filename: 'ps_i_love_you.mp4')
@@ -55,7 +57,8 @@ twilight = Movie.create!(
   title: 'Twilight', 
   description: "High-school student Bella Swan (Kristen Stewart), always a bit of a misfit, doesn't expect life to change much when she moves from sunny Arizona to rainy Washington state. Then she meets Edward Cullen (Robert Pattinson), a handsome but mysterious teen whose eyes seem to peer directly into her soul.",
   year: 2008,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Movie"
   )
 
 file5 = URI.open('https://homeflicks-seed.s3.amazonaws.com/twilight_1.mp4')
@@ -67,7 +70,8 @@ west_side_story = Movie.create!(
   title: 'West Side Story', 
   description: "A musical in which a modern day Romeo and Juliet are involved in New York street gangs. On the harsh streets of the upper west side, two gangs battle for control of the turf. The situation becomes complicated when a gang members falls in love with a rival's sister.",
   year: 1961,
-  rating: 'G'
+  rating: 'G',
+  video_type: "Movie"
   )
 
 file6 = URI.open('https://homeflicks-seed.s3.amazonaws.com/west_side_story.mp4')
@@ -82,7 +86,8 @@ spiderman_far_from_home = Movie.create!(
   title: "Spider-Man: Far from Home", 
   description: "Peter Parker's relaxing European vacation takes an unexpected turn when Nick Fury shows up in his hotel room to recruit him for a mission. The world is in danger as four massive elemental creatures -- each representing Earth, air, water and fire -- emerge from a hole torn in the universe.",
   year: 2019,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Movie"
   )
 
 file9 = URI.open('https://homeflicks-seed.s3.amazonaws.com/spiderman.mp4')
@@ -94,7 +99,8 @@ good_boys = Movie.create!(
   title: "Good Boys", 
   description: "Peter Parker's relaxing European vacation takes an unexpected turn when Nick Furyshows up in his hotel room to recruit him for a mission. The world is in danger as four massiveelemental creatures -- each representing Earth, air, water and fire -- emerge from a hole tornin the universe.",
   year: 2019,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Movie"
   )
 
   file10 = URI.open('https://homeflicks-seed.s3.amazonaws.com/good_kids.mp4')
@@ -106,7 +112,8 @@ home_alone = Movie.create!(
   title: "Home Alone", 
   description: "An eight-year-old troublemaker must protect his house from a pair of burglars when he is accidentally left home alone by his family during Christmas vacation.",
   year: 1990,
-  rating: 'PG'
+  rating: 'PG',
+  video_type: "Movie"
   )
 
   file11 = URI.open('https://homeflicks-seed.s3.amazonaws.com/home_alone.mp4')
@@ -118,7 +125,8 @@ ghost_busters = Movie.create!(
   title: "Ghostbusters", 
   description: "After the members of a team of scientists (Harold Ramis, Dan Aykroyd, Bill Murray) lose their cushy positions at a university in New York City, they decide to become 'ghostbusters' to wage a high-tech battle with the supernatural for money.",
   year: 1984,
-  rating: 'PG'
+  rating: 'PG',
+  video_type: "Movie"
   )
 
   file12 = URI.open('https://homeflicks-seed.s3.amazonaws.com/ghost_busters.m4v')
@@ -131,7 +139,8 @@ naruto_the_last = Movie.create!(
   title: 'The Last: Naruto the Movie', 
   description: "Two years after the Fourth Shinobi World War, Naruto must stop Toneri Otsutsuki, a descendant of Hamura Otsutsuki, after Toneri causes the moon to descend toward Earth.",
   year: 2015,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Show"
   )
 
   file13 = URI.open('https://homeflicks-seed.s3.amazonaws.com/naruto.mp4')
@@ -143,7 +152,8 @@ your_name = Movie.create!(
   title: "Your Name", 
   description: "Two teenagers share a profound, magical connection upon discovering they are swapping bodies. Things manage to become even more complicated when the boy and girl decide to meet in person.",
   year: 2016,
-  rating: 'PG'
+  rating: 'PG',
+  video_type: "Show"
   )
 
   file14 = URI.open('https://homeflicks-seed.s3.amazonaws.com/your_name_1.mp4')
@@ -155,7 +165,8 @@ pokemon = Movie.create!(
   title: "Pokemon: The Power of Us", 
   description: "Five strangers come together to save the day in Fula City when a series of threats endanger the annual Wind Festival and the city's entire population.",
   year: 2019,
-  rating: 'PG'
+  rating: 'PG',
+  video_type: "Show"
   )
 
   file15 = URI.open('https://homeflicks-seed.s3.amazonaws.com/pokemon.mp4')
@@ -168,7 +179,8 @@ my_hero_academia = Movie.create!(
   title: "My Hero Academia: Two Heroes", 
   description: "All Might and Deku accept an invitation to visit I Island where they battle against a villain who takes the island hostage.",
   year: 2018,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Show"
   )
 
   file17 = URI.open('https://homeflicks-seed.s3.amazonaws.com/academia.mp4')
@@ -185,7 +197,8 @@ maze_runner = Movie.create!(
   title: "Maze Runner: The Death Cure", 
   description: "Thomas leads some escaped Gladers on their final and most dangerous mission yet. To save their friends, they must break into the legendary Last City, a WCKD-controlled labyrinth that may turn out to be the deadliest maze of all. Anyone who makes it out alive will get answers to the questions that the Gladers have been asking since they arrived in the maze.",
   year: 2018,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Movie"
   )
 
   file20 = URI.open('https://homeflicks-seed.s3.amazonaws.com/the_death_cure.mp4')
@@ -199,7 +212,8 @@ percy_jackson = Movie.create!(
   title: "Percy Jackson & the Olympians", 
   description: "Always trouble-prone, the life of teenager Percy Jackson (Logan Lerman) gets a lot more complicated when he learns he's the son of the Greek god Poseidon. At a training ground for the children of deities, Percy learns to harness his divine powers and prepare for the adventure of a lifetime: he must prevent a feud among the Olympians from erupting into a devastating war on Earth, and rescue his mother from the clutches of Hades, god of the underworld.",
   year: 2016,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Movie"
   )
 
   file22 = URI.open('https://homeflicks-seed.s3.amazonaws.com/percy_jackson_1.mp4')
@@ -211,7 +225,8 @@ back_to_the_future = Movie.create!(
   title: "Back To The Future III", 
   description: "In this final chapter, Marty McFly obtains a 70-year-old message from the time-traveling Dr. Emmett Brown, in which he informs Marty that he has retired to a small town in the Old West. Marty then finds out that the Doc was murdered shortly after sending the letter. In order to save his friend, Marty will have to travel back in time, disentangle a lovestruck Doc from a local schoolmarm, and repair the DeLorean.",
   year: 1990,
-  rating: 'PG'
+  rating: 'PG',
+  video_type: "Movie"
   )
 
   file23 = URI.open('https://homeflicks-seed.s3.amazonaws.com/back_to_the_future_3.mp4')
@@ -223,7 +238,8 @@ star_wars = Movie.create!(
   title: "Star Wars: The Force Awakens", 
   description: "As a new threat to the galaxy rises, Rey, a desert scavenger, and Finn, an ex-stormtrooper, must join Han Solo and Chewbacca to search for the one hope of restoring peace.",
   year: 2015,
-  rating: 'PG-13'
+  rating: 'PG-13',
+  video_type: "Show"
   )
 
   file24 = URI.open('https://homeflicks-seed.s3.amazonaws.com/star_wars.mp4')

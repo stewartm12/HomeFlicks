@@ -21,8 +21,12 @@ class Banner extends React.Component {
   }
 
   handleResizeWindow(e) {
-    if (this.video.current.webkitDisplayingFullscreen) {
-      this.togglePlay();
+    // 
+    // if (this.video.current.fullscreenElement) {
+      
+      if (this.video.current === null) return;
+      if (window.innerHeight === screen.height) {
+      // this.togglePlay();
     } else {
       this.displayThumbnail();
     }
@@ -56,6 +60,8 @@ class Banner extends React.Component {
   }
 
   componentDidMount() {
+  // if (this.videoTimeout) clearTimeout(this.videoTimeout);
+
     this.props.movie.length > 0
       ? this.props.movie
       : this.props.fetchMovie(this.movieId());
@@ -74,10 +80,12 @@ class Banner extends React.Component {
   }
 
   togglePlay() {
+    if (this.videoTimeout) clearTimeout(this.videoTimeout);
+    this.setState({ muted: false });
     this.video.current.load();
     // this.video.current.play();
+    
     this.video.current.requestFullscreen();
-    this.setState({ muted: false });
   }
 
   stopMedia() {
