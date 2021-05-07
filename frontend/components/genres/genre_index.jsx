@@ -9,14 +9,17 @@ class GenreIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.genres.length > 0 ? this.props.genres : this.props.fetchGenres();
+    const {pathname} = this.props.location;
+    if (pathname === "/movies" || pathname === "/shows") {
+      this.props.genres.length > 0 ? this.props.genres : this.props.fetchGenres();
+    }
   }
 
   displayBrowse() {
     let movies = Object.values(this.props.movies);
 
     let movieList = movies.map((movie, index) => {
-      return <VideoItemContainer key={index} movie={movie} type="BROWSE" />;
+      return <VideoItemContainer key={`browse-${index}`} movie={movie} type="BROWSE" />;
     });
 
     return movieList;
@@ -32,7 +35,7 @@ class GenreIndex extends React.Component {
     let movies = Object.values(this.props.myList);
 
     let movieList = movies.map((movie, index) => {
-      return <VideoItemContainer key={index} movie={movie} type="MY-LIST" />;
+      return <VideoItemContainer key={`mylist-${index}`} movie={movie} type="MY-LIST" />;
     });
 
     if (movieList.length > 0) {
@@ -50,7 +53,7 @@ class GenreIndex extends React.Component {
       let movies = this.props.movies;
 
       let movieList = movies.map((movie, index) => {
-        return <VideoItemContainer key={index} movie={movie} />;
+        return <VideoItemContainer key={`movielist-${index}`} movie={movie} />;
       });
 
       return movieList;
@@ -58,7 +61,7 @@ class GenreIndex extends React.Component {
       // const {shows} = this.props;
       let shows = this.props.movies;
       let showsList = shows.map((movie, index) => {
-        return <VideoItemContainer key={index} movie={movie} />;
+        return <VideoItemContainer key={`showlist-${index}`} movie={movie} />;
       });
 
       return showsList;

@@ -22,7 +22,7 @@ class VideoIndex extends React.Component {
       return (
         <>
           <GenreIndexContainer
-            key={`vid`}
+            key={genre}
             movies={genre.movies}
             genre={genre}
           />

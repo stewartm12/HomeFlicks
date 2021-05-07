@@ -23,6 +23,12 @@
     margin-top: 10%; */
 }
 
+.form-demo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .signup-submit {
   background-color: #e50914;
   color: white;
@@ -104,15 +110,23 @@
   font-size: 19px;
     z-index: 333;
     cursor: pointer;
+    position: relative;
+    top: 375px;
+    left: 15px;
 }
 
 @media(max-width: 570px) {
+  .form-demo-container {
+    text-align: center;
+  }
   .signup-input input {
   width: 80vw;
   }
 
   .demo-btn {
+    position: relative;
     width: 80vw;
+    left: 0px;
   }
 
   .signup-form input[type=submit] {
