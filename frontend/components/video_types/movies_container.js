@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-// import DisplayVideoType from './display_video_type';
 import { withRouter } from 'react-router-dom';
 import GenreIndex from '../genres/genre_index';
 import { selectAllVideos } from "../../reducers/selectors";
