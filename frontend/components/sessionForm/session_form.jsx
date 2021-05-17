@@ -120,7 +120,7 @@ class SessionForm extends React.Component {
                 <p>Just a few more steps and you're done!</p>
                 <p>We hate paperwork, too.</p>
               </div>
-              <div className="signup-input">
+              <div className="signup-input-container">
                 <input
                   type="text"
                   placeholder="Email"
