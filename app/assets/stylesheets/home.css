@@ -176,7 +176,7 @@ html {
   }
 
   .email-label {
-    margin-top: 20px;
+    margin-top: 25px;
     left: 15px;
   }
 
@@ -187,6 +187,11 @@ html {
 }
 
 @media(max-width:720px) {
+
+  .email-label {
+    margin-top: 20px;
+  }
+
   .home-text {
     top: 40%;
   }
@@ -212,9 +217,6 @@ html {
 
   .home-email-input {
     height: 48px;
-  }
-
-  .home-email-input {
     min-width: 480px;
   }
 
@@ -222,6 +224,24 @@ html {
     margin-top: 10px;
     height: 50px;
   } 
+}
+
+@media(max-width: 499px) {
+  .home-email-input:focus ~ .email-label,
+  .home-email-input:valid ~ .email-label {
+    /* margin-top: 5px; */
+    left: 50px;
+    /* font-size: 12px;
+    opacity: 1; */
+  }
+
+  .home-email-input {
+    min-width: 430px;
+  }
+
+  .email-label {
+    left: 40px;
+  }
 }
 
 /* .home-body {
