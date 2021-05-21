@@ -10,7 +10,6 @@
 #  updated_at      :datetime         not null
 #
 class User < ApplicationRecord
-
   attr_reader :password
 
   validates :email, :password_digest, :session_token, presence: true
