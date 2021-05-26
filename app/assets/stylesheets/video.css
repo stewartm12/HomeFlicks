@@ -190,13 +190,13 @@ visibility: hidden;
 }
 
 @media(max-width: 720px) {
-.video {
-  height: 50px;
-  width: 100px;
-}
-
-.whole-player-container {
-  max-height: 50px;
-  max-width: 100px;
-}
+  .video {
+    height: 50px;
+    width: 100px;
+  }
+  
+  .whole-player-container {
+    max-height: 50px;
+    max-width: 100px;
+  }
 }
