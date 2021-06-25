@@ -10,4 +10,7 @@ Rails.application.routes.draw do
 
     get 'search', to: 'movies#search', as: :movies_search
   end
+  resources :upper do 
+    resources :what
+  end
 end
