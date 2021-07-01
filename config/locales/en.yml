@@ -30,4 +30,7 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  splashPage: 
+    header: "Películas, programas de televisión y más ilimitados."
+    subHeader: "Mira en cualquier lugar. Cancela en cualquier momento."
+    subHeader2: "¿Listo para mirar? Crea tu cuenta a continuación."
