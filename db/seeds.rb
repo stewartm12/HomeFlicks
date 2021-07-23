@@ -247,6 +247,7 @@ star_wars = Movie.create!(
   image17 = URI.open("https://homeflicks-seed.s3.amazonaws.com/star_wars_img.jpeg")
   star_wars.thumbnail.attach(io: image17, filename: "star_wars_img.jpeg")
 
+  
 # romance movies
 GenreMovie.create!(movie_id: fiftyShades.id, genre_id: romance.id)
 GenreMovie.create!(movie_id: ps_i_love_you.id, genre_id: romance.id)
