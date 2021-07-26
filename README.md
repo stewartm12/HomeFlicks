@@ -18,6 +18,34 @@
 * Users can hover over movie thumbnails to watch a trailer of the movie.
 * On click of the play button, User is brought tofullscreen where the movie is then played.
 
+# Code Sample
+```ruby
+class Api::MoviesController < ApplicationController
+  def show
+    @movie = Movie.find(params[:id])
+    render "api/movies/show"
+  end
+
+  def search
+        query_string = params[:query_string]
+        
+        if query_string.length == 0 
+            render json: {}
+        else 
+            query_string = query_string.chars.map{|char| char.downcase}.join
+            @movies = Movie.with_attached_thumbnail
+                .where('LOWER(title) LIKE ?', '%' + query_string + '%')
+
+            if @movies.empty?
+                render json: {}
+            else 
+                render "api/movies/movies"
+            end
+        end
+    end
+end
+```
+* In this sample, we are grabbing the query string from the params which was sent from the frontend of the application. If the query string is empty quotes, we would just send back an empty json response. Otherwise, we would convert all the existing characters into lowercase. After completing that task, i have used active record queries combined with REGEX to find any movies that is the same or similar to the query string. If none could be found, we return an empty json response. Otherwise, we head into "api/movies/movies" to modify our data to send it back the frontend
 
 # Features
 ## Dynamic Banner Video
